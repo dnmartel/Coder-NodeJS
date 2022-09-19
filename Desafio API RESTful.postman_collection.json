@@ -62,7 +62,7 @@
 			"response": []
 		},
 		{
-			"name": "PUT 127.0.0.1:8080/api/productos/7",
+			"name": "PUT 127.0.0.1:8080/api/productos/4",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -76,7 +76,7 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:8080/api/productos/7",
+					"raw": "127.0.0.1:8080/api/productos/4",
 					"host": [
 						"127",
 						"0",
@@ -87,14 +87,14 @@
 					"path": [
 						"api",
 						"productos",
-						"7"
+						"4"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE 127.0.0.1:8080/api/productos/7",
+			"name": "DELETE 127.0.0.1:8080/api/productos/4",
 			"request": {
 				"method": "DELETE",
 				"header": [],
