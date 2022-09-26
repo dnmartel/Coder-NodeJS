@@ -7,11 +7,14 @@ block content
             th Precio 
             th Foto
         
+            if data.length === 0
+                h3 No hay productos
             each e in data
                 tr
                     td= e.title 
                     td= e.price
-                    td= e.thumbnail 
+                    td
+                        img(src= e.thumbnail, alt= e.title, width="50px" height="50px")
     
     a(href="http://localhost:8080/") 
                 button Al formulario

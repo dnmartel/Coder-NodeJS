@@ -7,32 +7,6 @@ const Productos = require("../modules/productos");
 // Inicializo un array de productos en memoria, basado en clase
 const productos = new Productos();
 
-// Defino y pusheo productos de prueba
-const base = [
-    {
-        title: "Perro",
-        price: 500.45,
-        thumbnail:
-            "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
-    },
-    {
-        title: "Regla",
-        price: 123.49,
-        thumbnail:
-            "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
-    },
-    {
-        title: "Escuadra",
-        price: 321.14,
-        thumbnail:
-            "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
-    }
-];
-
-base.forEach((e) => {
-    productos.Save(e);
-});
-
 // GET '/productos' -> devuelve todos los productos. - CHECKEADO
 router.get("/productos", (req, res) => {
     const data = productos.GetAll();
