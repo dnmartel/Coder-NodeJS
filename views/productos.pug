@@ -1,0 +1,21 @@
+extends index
+
+block content
+    table
+        tr
+            th Nombre
+            th Precio 
+            th Foto
+        
+            each e in data
+                tr
+                    td= e.title 
+                    td= e.price
+                    td= e.thumbnail 
+    
+    a(href="http://localhost:8080/") 
+                button Al formulario
+
+
+
+

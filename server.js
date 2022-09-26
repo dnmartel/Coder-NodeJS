@@ -5,6 +5,7 @@ const path = require("path");
 
 // Importo router productos
 const productos = require("./routers/productos");
+const formulario = require("./routers/formulario");
 
 // Defino el puerto de escucha
 const PORT = 8080;
@@ -14,10 +15,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Defino ruta principal y subrutas
-app.use("/api/productos", productos);
+app.use("/", formulario, productos);
 
-// Defino ruta para elementos estáticos
-app.use(express.static(path.join(__dirname, "public")));
+// View engine config
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
 // Escucha del servidor
 const server = app.listen(PORT, () => {
