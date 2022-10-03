@@ -4,6 +4,7 @@
     // Variables para mensajes
     let mensajes = [];
     const formMessage = document.getElementById("form-message");
+    const inputEmail = document.getElementById("input-email");
     const inputMessage = document.getElementById("input-message");
     const showMessage = document.getElementById("show-message");
 
@@ -36,14 +37,15 @@
         showMessage.innerText = "";
         messages.forEach((data) => {
             const item = document.createElement("li");
-            item.innerText = `Socket ${data.socketID} -> ${data.mensaje}`;
+            item.innerText = `Usuario ${data.email} -> ${data.mensaje}`;
             showMessage.appendChild(item);
         });
     }
 
     formMessage.addEventListener("submit", (event) => {
         event.preventDefault();
-        socket.emit("nuevo-mensaje", inputMessage.value);
+        const data = { email: inputEmail.value, mensaje: inputMessage.value };
+        socket.emit("nuevo-mensaje", data);
         inputMessage.value = "";
         inputMessage.focus();
     });

@@ -24,7 +24,7 @@ productos.Save({
 
 const mensajes = [
     {
-        socketID: "laAImxT3Eol1",
+        email: "hola@email.com",
         mensaje: "First message"
     }
 ];
@@ -35,14 +35,16 @@ function setEvent(io) {
         io.emit("refresh-products", productos.GetAll());
         clienteSocket.emit("inicio", mensajes);
 
+        // MENSAJES NUEVOS
         clienteSocket.on("nuevo-mensaje", (data) => {
-            mensajes.push({ socketID: clienteSocket.id, mensaje: data });
+            mensajes.push({ email: data.email, mensaje: data.mensaje });
             io.emit("notificacion", {
-                socketID: clienteSocket.id,
-                mensaje: data
+                email: data.email,
+                mensaje: data.mensaje
             });
         });
 
+        // PRODUCTOS NUEVOS
         clienteSocket.on("submit-products", (data) => {
             console.log("🎈 Productos recibidos del formulario");
             productos.Save(data);
