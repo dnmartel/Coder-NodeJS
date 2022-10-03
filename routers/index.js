@@ -3,9 +3,9 @@ const express = require("express");
 const { Router } = express;
 const router = Router();
 
-// GET '/' -> devuelve el formulario renderizado. - CHECKEADO
+// GET '/' -> devuelve la vista renderizada.
 router.get("/", (req, res) => {
-    res.render("formulario", {});
+    res.render("index", {});
 });
 
 module.exports = router;

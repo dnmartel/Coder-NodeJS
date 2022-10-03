@@ -1,0 +1,38 @@
+<h3>Agregar Producto</h3>
+
+<form>
+<input type="text" name="title" id="title-product" required placeholder="Titulo">
+<input type="text" name="price" id="price-product" required placeholder="Precio">
+<input type="text" name="thumbnail" id="thumbnail-product" required placeholder="URL de imagen">
+<button type="submit" id="submit-products">Agregar</button>
+
+</form>
+            
+<h3>Productos</h3>
+<table id="tabla-productos">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Foto</th>
+    </tr>
+    </thead>
+    <tbody id="tbody-productos">
+
+    </tbody>
+
+</table>
+
+<br><br><br><br><br><br><br>
+<hr>
+
+<h4>Centro de mensajes</h4>
+<form id="form-message">
+    <input type="text" name="input-message" id="input-message" placeholder="Escribe un mensaje">
+    <button type="submit">Enviar</button>
+</form>
+
+<h5>Historial de mensajes</h1>
+<ul id="show-message"></ul>
+
+<script src="/js/script.js"></script>

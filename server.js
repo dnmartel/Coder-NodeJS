@@ -2,10 +2,14 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const http = require("http");
+const handlebars = require("express-handlebars");
+
+const { initSocket } = require("./socket");
 
 // Importo router productos
-const productos = require("./routers/productos");
-const formulario = require("./routers/formulario");
+const index = require("./routers/index");
+const chat = require("./routers/chat");
 
 // Defino el puerto de escucha
 const PORT = 8080;
@@ -13,16 +17,20 @@ const PORT = 8080;
 // Defino el formato de entrada - json() y urlencoded() Parsean el contenido de POST y PUT dentro del body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Defino ruta principal y subrutas
-app.use("/", formulario, productos);
+app.use("/", index, chat);
 
 // View engine config
+app.engine("handlebars", handlebars.engine());
+app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
 
-// Escucha del servidor
-const server = app.listen(PORT, () => {
+// Instancio y pongo en escucha el servidor
+const server = http.createServer(app);
+initSocket(server);
+server.listen(PORT, () => {
     console.log(
         `Servidor http esta escuchando en el puerto ${server.address().port}`
     );
