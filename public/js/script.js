@@ -22,6 +22,7 @@
         console.log("🎉 Conectados al servidor");
     });
 
+    // MENSAJES
     socket.on("inicio", (data) => {
         mensajes = data;
         updateMessages(mensajes);
@@ -32,22 +33,40 @@
         updateMessages(mensajes);
     });
 
-    // MENSAJES
     function updateMessages(messages = []) {
         showMessage.innerText = "";
         messages.forEach((data) => {
             const item = document.createElement("li");
-            item.innerText = `Usuario ${data.email} -> ${data.mensaje}`;
+            item.innerHTML = `<span class="userChat">${data.email} </span><span class="dateChat">[${data.ts}]</span> -> <span class="msgChat">${data.mensaje} </span>`;
             showMessage.appendChild(item);
         });
     }
 
+    function isEmail(emailAdress) {
+        // eslint-disable-next-line no-useless-escape
+        const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (emailAdress.match(regex)) return true;
+        else return false;
+    }
+
     formMessage.addEventListener("submit", (event) => {
         event.preventDefault();
-        const data = { email: inputEmail.value, mensaje: inputMessage.value };
-        socket.emit("nuevo-mensaje", data);
-        inputMessage.value = "";
-        inputMessage.focus();
+        if (isEmail(inputEmail.value)) {
+            document.getElementById("validEmail").innerHTML = "";
+            const timestamp = dayjs().format("DD/MM/YYYY HH:mm:ss");
+            const data = {
+                email: inputEmail.value,
+                mensaje: inputMessage.value,
+                ts: timestamp
+            };
+            socket.emit("nuevo-mensaje", data);
+            inputMessage.value = "";
+            inputMessage.focus();
+        } else {
+            document.getElementById("validEmail").innerHTML =
+                "El correo no es válido.";
+        }
     });
 
     // PRODUCTOS
@@ -72,10 +91,8 @@
             <tbody id="tbody-productos">
             </tbody>`;
         productos.forEach((data) => {
-            console.log(data.title);
             const tr = document.createElement("tr");
             tr.innerHTML = `<td>${data.title}</td><td>${data.price}</td><td><img src="${data.thumbnail}" alt="${data.title}}" width="50px" height="50px"></td>`;
-            console.log(tr);
             document.getElementById("tbody-productos").appendChild(tr);
         });
     });

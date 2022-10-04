@@ -1,0 +1,7 @@
+[
+  {
+    "email": "hola@email.com",
+    "mensaje": "First message",
+    "ts": "04/10/2022 15:16:01"
+  }
+]

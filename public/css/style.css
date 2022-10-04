@@ -1,0 +1,19 @@
+.userChat {
+    color: rgb(60, 125, 168);
+    font-weight: bold;
+}
+.dateChat {
+    color: bisque;
+    font-size: 0.6em;
+}
+.msgChat {
+    color: rgb(85, 136, 85);
+    font-style: italic;
+}
+
+#validEmail {
+    margin: 0;
+    padding: 0;
+    font-size: 0.75em;
+    color: red;
+}

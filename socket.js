@@ -1,3 +1,6 @@
+const dayjs = require("dayjs");
+const Msg = require("./modules/mensajes");
+const mensajes = new Msg("mensajes.txt");
 const { Server } = require("socket.io");
 let io;
 
@@ -22,25 +25,35 @@ productos.Save({
         "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
 });
 
-const mensajes = [
-    {
-        email: "hola@email.com",
-        mensaje: "First message"
-    }
-];
+mensajes.save({
+    email: "hola@email.com",
+    mensaje: "First message",
+    ts: dayjs().format("DD/MM/YYYY HH:mm:ss")
+});
 
 function setEvent(io) {
     io.on("connection", (clienteSocket) => {
         console.log("😁 Nuevo cliente conectado", clienteSocket.id);
         io.emit("refresh-products", productos.GetAll());
-        clienteSocket.emit("inicio", mensajes);
+
+        async function updateMessages() {
+            await mensajes.getAll().then((data) => {
+                clienteSocket.emit("inicio", data);
+            });
+        }
+        updateMessages();
 
         // MENSAJES NUEVOS
         clienteSocket.on("nuevo-mensaje", (data) => {
-            mensajes.push({ email: data.email, mensaje: data.mensaje });
+            mensajes.save({
+                email: data.email,
+                mensaje: data.mensaje,
+                ts: data.ts
+            });
             io.emit("notificacion", {
                 email: data.email,
-                mensaje: data.mensaje
+                mensaje: data.mensaje,
+                ts: dayjs().format("DD/MM/YYYY HH:mm:ss")
             });
         });
 
