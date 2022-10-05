@@ -1,6 +1,19 @@
 /* eslint-disable no-undef */
 /* eslint-disable space-before-function-paren */
 (function () {
+    fetch("/views/index.handlebars")
+        .then((res) => {
+            res.text();
+        })
+        .then((text) => {
+            console.log("compile");
+            const template = Handlebars.compile(text);
+            const html = template();
+            console.log(html);
+            document.querySelector("span").innerHTML = html;
+        })
+        .catch((err) => console.log(err));
+
     // Variables para mensajes
     let mensajes = [];
     const formMessage = document.getElementById("form-message");

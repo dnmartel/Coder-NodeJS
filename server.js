@@ -9,7 +9,6 @@ const { initSocket } = require("./socket");
 
 // Importo router productos
 const index = require("./routers/index");
-const chat = require("./routers/chat");
 
 // Defino el puerto de escucha
 const PORT = 8080;
@@ -20,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Defino ruta principal y subrutas
-app.use("/", index, chat);
+app.use("/", index);
 
 // View engine config
 app.engine("handlebars", handlebars.engine());
