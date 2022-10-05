@@ -1,1 +1,9 @@
-<h1> TEXTO </h1>
+{{#each data}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.price}}</td>
+            <td><img src="{{this.thumbnail}}" alt="{{this.title}}" width="50px" height="50px"></td>
+        </tr>
+    {{else}}
+        <h5>Aún no hay productos en el listado</h5>
+    {{/each}}

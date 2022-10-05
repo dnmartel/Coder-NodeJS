@@ -8,8 +8,7 @@
             })
             .then((text) => {
                 const template = Handlebars.compile(text);
-                console.log({ ...data });
-                const html = template(data);
+                const html = template({ data });
                 document.querySelector("tbody").innerHTML = html;
             })
             .catch((err) => console.log(err));
