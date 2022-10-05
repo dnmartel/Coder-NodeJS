@@ -1,19 +1,19 @@
 /* eslint-disable no-undef */
 /* eslint-disable space-before-function-paren */
 (function () {
-    fetch("/views/index.handlebars")
-        .then((res) => {
-            res.text();
-        })
-        .then((text) => {
-            console.log("compile");
-            const template = Handlebars.compile(text);
-            const html = template();
-            console.log(html);
-            document.querySelector("span").innerHTML = html;
-        })
-        .catch((err) => console.log(err));
-
+    async function fetchHTML(inputFetch, data) {
+        fetch(inputFetch)
+            .then((res) => {
+                return res.text();
+            })
+            .then((text) => {
+                const template = Handlebars.compile(text);
+                console.log({ ...data });
+                const html = template(data);
+                document.querySelector("tbody").innerHTML = html;
+            })
+            .catch((err) => console.log(err));
+    }
     // Variables para mensajes
     let mensajes = [];
     const formMessage = document.getElementById("form-message");
@@ -93,7 +93,7 @@
     });
 
     socket.on("refresh-products", (productos) => {
-        tablaProductos.innerHTML = `
+        /* tablaProductos.innerHTML = `
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -102,11 +102,13 @@
                 </tr>
             </thead>
             <tbody id="tbody-productos">
-            </tbody>`;
-        productos.forEach((data) => {
+            </tbody>`; */
+        console.log("productos", productos);
+        fetchHTML("../views/template.handlebars", productos);
+        /* productos.forEach((data) => {
             const tr = document.createElement("tr");
             tr.innerHTML = `<td>${data.title}</td><td>${data.price}</td><td><img src="${data.thumbnail}" alt="${data.title}}" width="50px" height="50px"></td>`;
             document.getElementById("tbody-productos").appendChild(tr);
-        });
+        }); */
     });
 })();
