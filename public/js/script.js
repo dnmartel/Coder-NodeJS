@@ -25,7 +25,6 @@
     const titleProductos = document.getElementById("title-product");
     const priceProductos = document.getElementById("price-product");
     const thumbProductos = document.getElementById("thumbnail-product");
-    const tablaProductos = document.getElementById("tabla-productos");
 
     const socket = io();
 

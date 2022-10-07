@@ -5,11 +5,8 @@ const router = Router();
 
 // GET '/' -> devuelve la vista renderizada.
 router.get("/", (req, res) => {
-    try {
-        res.send("index");
-    } catch (error) {
-        res.send("Error");
-    }
+    console.log("index");
+    res.send("index");
 });
 
 module.exports = router;

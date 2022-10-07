@@ -7,61 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Handlebars + SocketIO</title>
+    <title>Primer preentrega</title>
 </head>
 
 <body>
-    <h1 class="center">Express web server</h1>
+    <h1 class="center">Express WS</h1>
     <main class="container">
-        <section>
-            <h3>Agregar Producto</h3>
-
-            <form>
-                <input type="text" name="title" id="title-product" placeholder="Titulo" required>
-                <input type="text" name="price" id="price-product" placeholder="Precio" required>
-                <input type="text" name="thumbnail" id="thumbnail-product" placeholder="URL de imagen" required>
-                <button style="width: 20%; align-self: flex-end" role="button" type="submit"
-                    id="submit-products">Agregar</button>
-            </form>
-        </section>
-        <section>
-            <h3>Productos</h3>
-            <table id="tabla-productos">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Foto</th>
-                    </tr>
-                </thead>
-                <tbody> <!-- id="tbody-productos" -->
-
-                </tbody>
-
-            </table>
-        </section>
-        <section>
-            <h4>Centro de mensajes</h4>
-            <form id="form-message">
-                <span id="validEmail"></span>
-                <input type="email" name="input-email" id="input-email" placeholder="Email">
-                <input type="text" name="input-message" id="input-message" placeholder="Escribe un mensaje">
-                <button type="submit">Enviar</button>
-            </form>
-
-            <h5>Historial de mensajes</h1>
-                <ul id="show-message"></ul>
-        </section>
+        
     </main>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
-        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="/socket.io/socket.io.min.js"></script>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>

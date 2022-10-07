@@ -3,9 +3,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const http = require("http");
-const handlebars = require("express-handlebars");
-
-const { initSocket } = require("./socket");
 
 // Importo router productos
 const index = require("./routers/index");
@@ -19,16 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Defino ruta principal y subrutas
-app.use("/", index);
-
-// View engine config
-app.engine("handlebars", handlebars.engine());
-app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "views"));
+app.use("/api", index);
 
 // Instancio y pongo en escucha el servidor
 const server = http.createServer(app);
-initSocket(server);
 server.listen(PORT, () => {
     console.log(
         `Servidor http esta escuchando en el puerto ${server.address().port}`
