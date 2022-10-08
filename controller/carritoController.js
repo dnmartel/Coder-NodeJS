@@ -26,6 +26,30 @@ class Carrito {
         }
     }
 
+    async SaveProduct(obj, id) {
+        try {
+            const contenido = await this.GetAll();
+            const carrito = await this.GetByID(id);
+
+            obj.id = uuidv4();
+            obj.timestamp = dayjs().format("DD/MM/YYYY HH:mm:ss");
+
+            carrito.productos.push(obj);
+
+            const carritoID = contenido.find((e) => e.id === id);
+            Object.assign(carritoID, carrito);
+
+            await fs.promises.writeFile(
+                `./db/${this.nombreArchivo}`,
+                JSON.stringify(contenido, null, 2)
+            );
+
+            return carritoID;
+        } catch (error) {
+            console.log("😢 No se pudo guardar el objeto: " + error);
+        }
+    }
+
     async GetByID(id) {
         if (id) {
             try {
@@ -88,14 +112,28 @@ class Carrito {
         }
     }
 
-    async DeleteAll() {
-        try {
-            await fs.promises.writeFile(`./db/${this.nombreArchivo}`, "[]");
-            return "Todos los elementos borrados";
-        } catch (error) {
-            console.log(
-                `\n😢 No se pudo borrar el contenido de: "${this.nombreArchivo}":\n ${error} \n\n`
-            );
+    async DeleteProdById(id, idProd) {
+        if (id) {
+            try {
+                const contenido = await this.GetAll();
+
+                const indexID = contenido.findIndex((item) => item.id === id);
+
+                const prodIndexID = contenido[indexID].productos.findIndex(
+                    (item) => item.id === idProd
+                );
+                contenido[indexID].productos.splice(prodIndexID, 1);
+
+                await fs.promises.writeFile(
+                    `./db/${this.nombreArchivo}`,
+                    JSON.stringify(contenido, null, 2)
+                );
+                return { eliminado: idProd };
+            } catch (error) {
+                console.log("😢 No se pudo leer el id: " + error);
+            }
+        } else {
+            return null;
         }
     }
 }

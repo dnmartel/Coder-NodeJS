@@ -3,11 +3,10 @@ const app = express();
 const path = require("path");
 const http = require("http");
 
-// Cambiar esta variable para establecer rol
+// SETEAR ADMINISTRADOR
 const isAdmin = true;
 module.exports = isAdmin;
 
-// Importo router productos
 const productos = require("./routers/productos");
 const carrito = require("./routers/carrito");
 

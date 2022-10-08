@@ -1,74 +1,115 @@
 [
-    {
-        "id": "1",
+  {
+    "id": "1",
+    "timestamp": "",
+    "productos": [
+      {
+        "id": "100",
         "timestamp": "",
-        "productos": [
-            {
-                "id": "100",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 1,
-                "stock": 1
-            },
-            {
-                "id": "101",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 20,
-                "stock": 12
-            },
-            {
-                "id": "103",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 30,
-                "stock": 31
-            }
-        ]
-    },
-    {
-        "id": "f14fb620-5d0a-49d3-a5f5-0484e7ec60d6",
-        "timestamp": "08/10/2022 00:49:48",
-        "productos": [
-            {
-                "id": "100",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 1,
-                "stock": 1
-            },
-            {
-                "id": "101",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 20,
-                "stock": 12
-            },
-            {
-                "id": "103",
-                "timestamp": "",
-                "nombre": "",
-                "descripcion": "",
-                "codigo": "",
-                "foto": "",
-                "precio": 30,
-                "stock": 31
-            }
-        ]
-    }
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 1,
+        "stock": 1
+      },
+      {
+        "id": "101",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 20,
+        "stock": 12
+      },
+      {
+        "id": "103",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 30,
+        "stock": 31
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "timestamp": "08/10/2022 00:49:48",
+    "productos": [
+      {
+        "id": "100",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 1,
+        "stock": 1
+      },
+      {
+        "id": "101",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 20,
+        "stock": 12
+      },
+      {
+        "id": "103",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 30,
+        "stock": 31
+      },
+      {
+        "nombre": "asdasd",
+        "descripcion": "asdsaddsa",
+        "codigo": "132132",
+        "foto": "",
+        "precio": 21,
+        "stock": 21,
+        "id": "e6a5161d-ebc1-4e6a-98a6-10246f9d3566",
+        "timestamp": "08/10/2022 01:08:18"
+      },
+      {
+        "nombre": "asdasd123",
+        "descripcion": "asdsadds123a",
+        "codigo": "132333132",
+        "foto": "",
+        "precio": 21,
+        "stock": 21,
+        "id": "251b8592-6672-4438-b100-3fc8b2a8c45f",
+        "timestamp": "08/10/2022 01:08:59"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "timestamp": "",
+    "productos": [
+      {
+        "id": "100",
+        "timestamp": "",
+        "nombre": "",
+        "descripcion": "",
+        "codigo": "",
+        "foto": "",
+        "precio": 1,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "timestamp": "",
+    "productos": []
+  }
 ]
