@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
 class Productos {
     constructor(nombreArchivo) {
@@ -11,22 +12,20 @@ class Productos {
             // Traigo el contenido del archivo y lo parseo
             const contenido = await this.GetAll();
             // Asigno ID 1 si no tiene contenido, sino, 1 más que el último
-            if (contenido.length === 0) {
-                obj.id = 1;
-            } else {
-                obj.id = contenido[contenido.length - 1].id + 1;
-            }
+
+            obj.id = uuidv4();
+
             // Pusheo el objeto al array
             contenido.push(obj);
             // Escribo el objeto
             await fs.promises.writeFile(
-                `./${this.nombreArchivo}`,
+                `../db/${this.nombreArchivo}`,
                 JSON.stringify(contenido, null, 2)
             );
 
             return (
                 " Objeto guardado correctamente 😁",
-                `\n Ruta del archivo: ./${this.nombreArchivo}\n`,
+                `\n Ruta del archivo: /db/${this.nombreArchivo}\n`,
                 obj
             );
         } catch (error) {
@@ -55,7 +54,7 @@ class Productos {
         try {
             // Leo el archivo y lo almaceno en una variable
             const contenidoArchivo = await fs.promises.readFile(
-                `./${this.nombreArchivo}`,
+                `../db/${this.nombreArchivo}`,
                 "utf-8"
             );
             // Retorno el contenido del archivo
@@ -85,7 +84,7 @@ class Productos {
 
                 // Reescribo el archivo
                 await fs.promises.writeFile(
-                    `./${this.nombreArchivo}`,
+                    `../db/${this.nombreArchivo}`,
                     JSON.stringify(contenido, null, 2)
                 );
                 return "Se elimino el elemento con el id " + id;
@@ -100,11 +99,11 @@ class Productos {
     // deleteAll(): void - Elimina todos los objetos presentes en el archivo.
     async DeleteAll() {
         try {
-            await fs.promises.writeFile(`./${this.nombreArchivo}`, "[]");
+            await fs.promises.writeFile(`../db/${this.nombreArchivo}`, "[]");
             return "Todos los elementos borrados";
         } catch (error) {
             console.log(
-                `\n😢 No se pudo borrar el contenido de: "./${this.nombreArchivo}":\n ${error} \n\n`
+                `\n😢 No se pudo borrar el contenido de: "${this.nombreArchivo}":\n ${error} \n\n`
             );
         }
     }

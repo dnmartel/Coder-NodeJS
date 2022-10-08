@@ -5,7 +5,7 @@ const path = require("path");
 const http = require("http");
 
 // Cambiar esta variable para establecer rol
-const isAdmin = false;
+const isAdmin = true;
 module.exports = isAdmin;
 
 // Importo router productos

@@ -3,12 +3,15 @@ const express = require("express");
 const { Router } = express;
 const router = Router();
 const isAdmin = require("../server.js");
+const Productos = require("../controller/productosController");
+
+const productos = new Productos("productos.json");
 
 // GET '/' -> devuelve la vista renderizada.
 router.get("/productos", (req, res) => {
     if (isAdmin) {
-        console.log("productos");
-        res.json({ productos: "productos" });
+        console.log("Productos:", productos.GetAll());
+        res.json(productos.GetAll());
     } else {
         console.log("false");
         res.json({
