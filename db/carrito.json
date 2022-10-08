@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "timestamp": "",
+    "productos": [
+        {
+            "id": 100,
+            "timestamp": "",
+            "nombre": "",
+            "descripcion": "",
+            "codigo": "",
+            "foto": "",
+            "precio": 1,
+            "stock": 1
+        }
+    ]
+}

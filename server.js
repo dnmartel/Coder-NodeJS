@@ -4,8 +4,13 @@ const app = express();
 const path = require("path");
 const http = require("http");
 
+// Cambiar esta variable para establecer rol
+const isAdmin = false;
+module.exports = isAdmin;
+
 // Importo router productos
-const index = require("./routers/index");
+const productos = require("./routers/productos");
+const carrito = require("./routers/carrito");
 
 // Defino el puerto de escucha
 const PORT = 8080;
@@ -16,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Defino ruta principal y subrutas
-app.use("/api", index);
+app.use("/api", productos, carrito);
 
 // Instancio y pongo en escucha el servidor
 const server = http.createServer(app);

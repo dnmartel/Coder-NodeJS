@@ -1,15 +1,15 @@
 const fs = require("fs");
 
-class Contenedor {
+class Productos {
     constructor(nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
     }
 
     // save(Object): Number - Recibe un objeto, lo guarda en el archivo, devuelve el id asignado.
-    async save(obj) {
+    async Save(obj) {
         try {
             // Traigo el contenido del archivo y lo parseo
-            const contenido = await this.getAll();
+            const contenido = await this.GetAll();
             // Asigno ID 1 si no tiene contenido, sino, 1 más que el último
             if (contenido.length === 0) {
                 obj.id = 1;
@@ -35,11 +35,11 @@ class Contenedor {
     }
 
     // getById(Number): Object - Recibe un id y devuelve el objeto con ese id, o null si no está.
-    async getById(id) {
+    async GetByID(id) {
         if (id) {
             try {
                 // Traigo el contenido del archivo y lo parseo
-                const contenido = await this.getAll();
+                const contenido = await this.GetAll();
                 // Retorno el elementro filtrado por ID
                 return contenido.filter((el) => el.id === id);
             } catch (error) {
@@ -51,7 +51,7 @@ class Contenedor {
     }
 
     // getAll(): Object[] - Devuelve un array con los objetos presentes en el archivo.
-    async getAll() {
+    async GetAll() {
         try {
             // Leo el archivo y lo almaceno en una variable
             const contenidoArchivo = await fs.promises.readFile(
@@ -65,11 +65,17 @@ class Contenedor {
         }
     }
 
+    Update(id, data) {
+        const productoID = this.productos.find((e) => e.id === Number(id));
+        Object.assign(productoID, data);
+        return productoID;
+    }
+
     // deleteById(Number): void - Elimina del archivo el objeto con el id buscado.
-    async deleteById(id) {
+    async DeleteById(id) {
         if (id) {
             try {
-                const contenido = await this.getAll();
+                const contenido = await this.GetAll();
 
                 // Busco el indice del elemento por ID
                 const indexID = contenido.findIndex((item) => item.id === id);
@@ -92,7 +98,7 @@ class Contenedor {
     }
 
     // deleteAll(): void - Elimina todos los objetos presentes en el archivo.
-    async deleteAll() {
+    async DeleteAll() {
         try {
             await fs.promises.writeFile(`./${this.nombreArchivo}`, "[]");
             return "Todos los elementos borrados";
@@ -104,4 +110,4 @@ class Contenedor {
     }
 }
 
-module.exports = Contenedor;
+module.exports = Productos;
