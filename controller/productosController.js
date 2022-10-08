@@ -19,13 +19,13 @@ class Productos {
             contenido.push(obj);
             // Escribo el objeto
             await fs.promises.writeFile(
-                `../db/${this.nombreArchivo}`,
+                `./db/${this.nombreArchivo}`,
                 JSON.stringify(contenido, null, 2)
             );
 
             return (
                 " Objeto guardado correctamente 😁",
-                `\n Ruta del archivo: /db/${this.nombreArchivo}\n`,
+                `\n Ruta del archivo: ./db/${this.nombreArchivo}\n`,
                 obj
             );
         } catch (error) {
@@ -54,7 +54,7 @@ class Productos {
         try {
             // Leo el archivo y lo almaceno en una variable
             const contenidoArchivo = await fs.promises.readFile(
-                `../db/${this.nombreArchivo}`,
+                `./db/${this.nombreArchivo}`,
                 "utf-8"
             );
             // Retorno el contenido del archivo
@@ -84,7 +84,7 @@ class Productos {
 
                 // Reescribo el archivo
                 await fs.promises.writeFile(
-                    `../db/${this.nombreArchivo}`,
+                    `./db/${this.nombreArchivo}`,
                     JSON.stringify(contenido, null, 2)
                 );
                 return "Se elimino el elemento con el id " + id;
@@ -99,7 +99,7 @@ class Productos {
     // deleteAll(): void - Elimina todos los objetos presentes en el archivo.
     async DeleteAll() {
         try {
-            await fs.promises.writeFile(`../db/${this.nombreArchivo}`, "[]");
+            await fs.promises.writeFile(`./db/${this.nombreArchivo}`, "[]");
             return "Todos los elementos borrados";
         } catch (error) {
             console.log(
