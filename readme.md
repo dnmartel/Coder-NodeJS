@@ -8,7 +8,6 @@ npm install
 
 Variable Administrador se setea de forma manual, archivo server.js, linea 7, por defecto en TRUE.
 ```
-Acá estamos configurando una variable de entorno para nuestro proyecto, en este caso el puerto que usará el servidor.
 
 ## Producción
 
