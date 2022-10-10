@@ -4,6 +4,10 @@ const router = Router();
 const Carrito = require("../controller/carritoController");
 const carrito = new Carrito("carrito.json");
 
+router.get("/carritos", async (req, res) => {
+    const carritos = await carrito.GetAll();
+    res.status(200).json(carritos);
+});
 router.post("/carrito", async (req, res) => {
     console.log("isAdmin: true - method allowed");
 

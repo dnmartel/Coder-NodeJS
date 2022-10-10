@@ -17,30 +17,33 @@
         <h2>Rutas</h2>
         <ul>
             <li>/ - Raiz - Documentación</li>
-            <li>/api/productos/ - API Productos
-                <ul>
-                    <li>GET</li>
-                    <li>POST</li>
-                    <li>PUT</li>
-                    <li>DELETE</li>
-                </ul>
-            </li>
-            <li>/api/carrito/ - API Carrito
-                <ul>
-                    <li>GET</li>
-                    <li>POST</li>
-                    <li>PUT</li>
-                    <li>DELETE</li>
-                </ul>
-            </li>
-            <li>/api/carrito/:id/productos - API Carrito
-                <ul>
-                    <li>GET</li>
-                    <li>POST</li>
-                    <li>PUT</li>
-                    <li>DELETE</li>
-                </ul>
-            </li>
+
+            <p>Setear rol en server.js ( Linea 7 ) - true / false</p>
+
+            <a href="./productos.html"> /api/productos - API Productos</a>
+            <ul>
+                <li>GET /:id? - <span style="font-size: .75em;">Me permite listar todos los productos disponibles ó un
+                        producto por su id</span></li>
+                <li>POST / - <span style="font-size: .75em;">Para incorporar productos al listado (disponible para
+                        administradores)</span></li>
+                <li>PUT /:id - <span style="font-size: .75em;">Actualiza un producto por su id (disponible para
+                        administradores)</span></li>
+                <li>DELETE /:id - <span style="font-size: .75em;">Borra un producto por su id (disponible para
+                        administradores)</span></li>
+            </ul>
+            <a href="./carrito.html">/api/carrito/ - API Carrito</a>
+            <ul>
+                <li>POST / - <span style="font-size: .75em;">Crea un carrito y devuelve su id</span></li>
+                <li>DELETE /:id - <span style="font-size: .75em;">Vacía un carrito y lo elimina</span></li>
+            </ul><a href="carrito.html">/api/carrito/:id/productos - API Carrito</a>
+            <ul>
+                <li>GET / - <span style="font-size: .75em;">Me permite listar todos los productos guardados en el
+                        carrito</span></li>
+                <li>POST / - <span style="font-size: .75em;">Para incorporar productos al carrito por su id de
+                        producto</span></li>
+                <li>DELETE /:id - <span style="font-size: .75em;">Eliminar un producto del carrito por su id de carrito
+                        y de producto</span></li>
+            </ul>
 
 
         </ul>

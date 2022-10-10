@@ -21,3 +21,17 @@
 .center {
     text-align: center;
 }
+
+.card,
+.card p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.card header {
+    margin-bottom: 1em;
+}
+
+.card footer {
+    margin-top: 1em;
+}

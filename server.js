@@ -9,14 +9,16 @@ module.exports = isAdmin;
 
 const productos = require("./routers/productos");
 const carrito = require("./routers/carrito");
+const routerError = require("./routers/routerError");
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", productos, carrito);
+app.use("*", routerError);
 
 const server = http.createServer(app);
 server.listen(PORT, () => {

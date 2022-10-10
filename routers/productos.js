@@ -29,7 +29,7 @@ router.post("/productos", async (req, res) => {
         console.log("isAdmin: false - unauthorized");
         res.json({
             error: -1,
-            descripcion: "Ruta /api/productos - Método POST no autorizado"
+            descripcion: `Ruta ${req.baseUrl} - Método ${req.method} no autorizado`
         });
     }
 });
@@ -50,7 +50,7 @@ router.put("/productos/:id", async (req, res) => {
         console.log("isAdmin: false - unauthorized");
         res.json({
             error: -1,
-            descripcion: "Ruta /api/productos - Método PUT no autorizado"
+            descripcion: `Ruta ${req.baseUrl} - Método ${req.method} no autorizado`
         });
     }
 });
@@ -71,7 +71,7 @@ router.delete("/productos/:id", async (req, res) => {
         console.log("isAdmin: false - unauthorized");
         res.json({
             error: -1,
-            descripcion: "Ruta /api/productos - Método DELETE no autorizado"
+            descripcion: `Ruta ${req.baseUrl} - Método ${req.method} no autorizado`
         });
     }
 });
