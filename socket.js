@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import Mensajes from "./controllers/mensajes.js";
 import { Server } from "socket.io";
-// Inicializo un array de productos en memoria, basado en clase
 import Productos from "./controllers/productos.js";
 import {
     optionsMySQL,
@@ -10,6 +9,7 @@ import {
     createTableSQLite3
 } from "./db/index.js";
 
+// Modificar con nombre de tabla a trabajar
 const tableMySQL = "pruebas_productos";
 const tableSQLite3 = "tabla_mensajes";
 
