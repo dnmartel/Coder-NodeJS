@@ -3,9 +3,21 @@ import Mensajes from "./controllers/mensajes.js";
 import { Server } from "socket.io";
 // Inicializo un array de productos en memoria, basado en clase
 import Productos from "./controllers/productos.js";
+import {
+    optionsMySQL,
+    createTableMySQL,
+    optionsSQLite3,
+    createTableSQLite3
+} from "./db/index.js";
 
-const mensajes = new Mensajes("./db/mensajes.txt");
-const productos = new Productos();
+const tableMySQL = "pruebas_productos";
+const tableSQLite3 = "tabla_mensajes";
+
+createTableMySQL(tableMySQL);
+createTableSQLite3(tableSQLite3);
+const mensajes = new Mensajes(optionsSQLite3, tableSQLite3);
+const productos = new Productos(optionsMySQL, tableMySQL);
+
 let io;
 
 export default function initSocket(httpServer) {
@@ -13,56 +25,37 @@ export default function initSocket(httpServer) {
     setEvent(io);
 }
 
-productos.Save({
-    title: "Escuadra",
-    price: 123.49,
-    thumbnail:
-        "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
-});
-productos.Save({
-    title: "Regla",
-    price: 485.36,
-    thumbnail:
-        "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png"
-});
-
-mensajes.save({
-    email: "hola@email.com",
-    mensaje: "First message",
-    ts: dayjs().format("DD/MM/YYYY HH:mm:ss")
-});
-
 function setEvent(io) {
-    io.on("connection", (clienteSocket) => {
+    io.on("connection", async (clienteSocket) => {
         console.log("😁 Nuevo cliente conectado", clienteSocket.id);
-        io.emit("refresh-products", productos.GetAll());
+        io.emit("refresh-products", await productos.GetAll());
 
         async function updateMessages() {
-            await mensajes.getAll().then((data) => {
+            await mensajes.GetAll().then((data) => {
                 clienteSocket.emit("inicio", data);
             });
         }
         updateMessages();
 
         // MENSAJES NUEVOS
-        clienteSocket.on("nuevo-mensaje", (data) => {
-            mensajes.save({
+        clienteSocket.on("nuevo-mensaje", async (data) => {
+            await mensajes.Save({
                 email: data.email,
-                mensaje: data.mensaje,
-                ts: data.ts
+                message: data.message,
+                timestamp: data.timestamp
             });
             io.emit("notificacion", {
                 email: data.email,
-                mensaje: data.mensaje,
-                ts: dayjs().format("DD/MM/YYYY HH:mm:ss")
+                message: data.message,
+                timestamp: dayjs().format("DD/MM/YYYY HH:mm:ss")
             });
         });
 
         // PRODUCTOS NUEVOS
-        clienteSocket.on("submit-products", (data) => {
+        clienteSocket.on("submit-products", async (data) => {
             console.log("🎈 Productos recibidos del formulario");
-            productos.Save(data);
-            io.emit("refresh-products", productos.GetAll());
+            await productos.Save(data);
+            io.emit("refresh-products", await productos.GetAll());
         });
 
         clienteSocket.on("disconnect", () => {

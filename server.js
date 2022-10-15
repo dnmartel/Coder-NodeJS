@@ -4,9 +4,9 @@ import path from "path";
 import http from "http";
 import handlebars from "express-handlebars";
 import initSocket from "./socket.js";
-// Importo router productos
 import index from "./routers/index.js";
 import { fileURLToPath } from "url";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

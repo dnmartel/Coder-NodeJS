@@ -1,40 +1,33 @@
-import fs from "fs";
+import knex from "knex";
 
 export default class Mensajes {
-    constructor(nombreArchivo) {
-        this.nombreArchivo = nombreArchivo;
+    constructor(options, table) {
+        this.options = options;
+        this.table = table;
     }
 
-    // save(Object) - Recibe un objeto, lo guarda en el archivo
-    async save(obj) {
+    async GetAll() {
+        const knexInstance = knex(this.options);
         try {
-            // Traigo el contenido del archivo y lo parseo
-            const contenido = await this.getAll();
-            // Pusheo el objeto al array
-            contenido.push(obj);
-            // Escribo el objeto
-            await fs.promises.writeFile(
-                `./${this.nombreArchivo}`,
-                JSON.stringify(contenido, null, 2)
-            );
-            return obj;
+            const rows = await knexInstance(this.table).select("*");
+            console.log("Mensajes encontrados:", rows.length);
+            return rows;
         } catch (error) {
-            console.log("😢 No se pudo guardar el objeto: " + error);
+            console.error(error);
+        } finally {
+            knexInstance.destroy();
         }
     }
 
-    // getAll(): Object[] - Devuelve un array con los  presentes en el archivo.
-    async getAll() {
+    async Save(obj) {
+        const knexInstance = knex(this.options);
         try {
-            // Leo el archivo y lo almaceno en una variable
-            const contenidoArchivo = await fs.promises.readFile(
-                `./${this.nombreArchivo}`,
-                "utf-8"
-            );
-            // Retorno el contenido del archivo
-            return JSON.parse(contenidoArchivo);
+            await knexInstance(this.table).insert(obj);
+            console.log("Mensaje guardado con exito");
         } catch (error) {
-            return [];
+            console.error(error);
+        } finally {
+            knexInstance.destroy();
         }
     }
 }
