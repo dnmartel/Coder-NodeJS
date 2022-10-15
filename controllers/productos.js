@@ -1,4 +1,5 @@
-class Productos {
+
+export default class Productos {
     constructor() {
         this.productos = [];
     }
@@ -32,5 +33,3 @@ class Productos {
         this.productos.splice(this.productos.indexOf(toDelete), 1);
     }
 }
-
-module.exports = Productos;

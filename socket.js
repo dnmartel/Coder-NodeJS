@@ -1,17 +1,18 @@
-const dayjs = require("dayjs");
-const Msg = require("./modules/mensajes");
-const mensajes = new Msg("mensajes.txt");
-const { Server } = require("socket.io");
+import dayjs from "dayjs";
+import Mensajes from "./controllers/mensajes.js";
+import { Server } from "socket.io";
+// Inicializo un array de productos en memoria, basado en clase
+import Productos from "./controllers/productos.js";
+
+const mensajes = new Mensajes("./db/mensajes.txt");
+const productos = new Productos();
 let io;
 
-function initSocket(httpServer) {
+export default function initSocket(httpServer) {
     io = new Server(httpServer);
     setEvent(io);
 }
 
-// Inicializo un array de productos en memoria, basado en clase
-const Productos = require("./modules/productos");
-const productos = new Productos();
 productos.Save({
     title: "Escuadra",
     price: 123.49,
@@ -69,5 +70,3 @@ function setEvent(io) {
         });
     });
 }
-
-module.exports = { initSocket };

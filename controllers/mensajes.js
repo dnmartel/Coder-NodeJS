@@ -1,6 +1,6 @@
-const fs = require("fs");
+import fs from "fs";
 
-class Mensajes {
+export default class Mensajes {
     constructor(nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
     }
@@ -38,5 +38,3 @@ class Mensajes {
         }
     }
 }
-
-module.exports = Mensajes;

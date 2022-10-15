@@ -1,15 +1,16 @@
 // Importo dependencias de express
-const express = require("express");
-const app = express();
-const path = require("path");
-const http = require("http");
-const handlebars = require("express-handlebars");
-
-const { initSocket } = require("./socket");
-
+import express from "express";
+import path from "path";
+import http from "http";
+import handlebars from "express-handlebars";
+import initSocket from "./socket.js";
 // Importo router productos
-const index = require("./routers/index");
+import index from "./routers/index.js";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const app = express();
 // Defino el puerto de escucha
 const PORT = 8080;
 

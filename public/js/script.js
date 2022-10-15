@@ -25,7 +25,6 @@
     const titleProductos = document.getElementById("title-product");
     const priceProductos = document.getElementById("price-product");
     const thumbProductos = document.getElementById("thumbnail-product");
-    const tablaProductos = document.getElementById("tabla-productos");
 
     const socket = io();
 
@@ -92,22 +91,7 @@
     });
 
     socket.on("refresh-products", (productos) => {
-        /* tablaProductos.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Foto</th>
-                </tr>
-            </thead>
-            <tbody id="tbody-productos">
-            </tbody>`; */
         console.log("productos", productos);
         fetchHTML("../views/template.handlebars", productos);
-        /* productos.forEach((data) => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `<td>${data.title}</td><td>${data.price}</td><td><img src="${data.thumbnail}" alt="${data.title}}" width="50px" height="50px"></td>`;
-            document.getElementById("tbody-productos").appendChild(tr);
-        }); */
     });
 })();
