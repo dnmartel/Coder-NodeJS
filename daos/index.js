@@ -1,8 +1,8 @@
 import config from "../config.js";
 
 /* let PERSISTENCIA = config.PERSISTENCIA.memoria; */
-let PERSISTENCIA = config.PERSISTENCIA.json;
-/* let PERSISTENCIA = config.PERSISTENCIA.mongo; */
+/* let PERSISTENCIA = config.PERSISTENCIA.json; */
+let PERSISTENCIA = config.PERSISTENCIA.mongo;
 /* let PERSISTENCIA = config.PERSISTENCIA.firebase; */
 
 let productosDao;

@@ -3,7 +3,7 @@ export default {
         path: "./db"
     },
     mongoDB: {
-        URI: "mongodb://localhost:27017/ecommerce"
+        URI: "mongodb+srv://developer:Hi0EhqJcz7DixAI6@cluster0.capdcjp.mongodb.net/?retryWrites=true&w=majority"
     },
     PERSISTENCIA: {
         json: "json" ,
