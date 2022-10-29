@@ -1,11 +1,11 @@
-const express = require("express");
+import express from "express";
 const { Router } = express;
 const router = Router();
-const Carrito = require("../controller/carritoController");
-const carrito = new Carrito("carrito.json");
+import { carritosDao as carrito } from "../daos/index.js";
 
 router.get("/carritos", async (req, res) => {
     const carritos = await carrito.GetAll();
+    console.log("ACA", carritos);
     res.status(200).json(carritos);
 });
 router.post("/carrito", async (req, res) => {
@@ -58,4 +58,4 @@ router.delete("/carrito/:id/productos/:id_prod", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

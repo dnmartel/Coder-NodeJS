@@ -1,15 +1,20 @@
-const express = require("express");
+// Importo dependencias de express
+import express from "express";
+import path from "path";
+import http from "http";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-const path = require("path");
-const http = require("http");
 
 // SETEAR ADMINISTRADOR
-const isAdmin = true;
-module.exports = isAdmin;
+export const isAdmin = true;
 
-const productos = require("./routers/productos");
-const carrito = require("./routers/carrito");
-const routerError = require("./routers/routerError");
+import productos from "./routers/productos.js";
+import carrito from "./routers/carrito.js";
+import routerError from "./routers/routerError.js";
 
 const PORT = process.env.PORT || 8080;
 

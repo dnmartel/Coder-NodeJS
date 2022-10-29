@@ -1,10 +1,11 @@
-const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
-const dayjs = require("dayjs");
+import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
+import dayjs from "dayjs";
+import config from "../config.js";
 
-class Carrito {
+class ContenedorArchivo {
     constructor(nombreArchivo) {
-        this.nombreArchivo = nombreArchivo;
+        this.nombreArchivo = `${config.fileSystem.path}/${nombreArchivo}`;
     }
 
     async Save(obj) {
@@ -17,7 +18,7 @@ class Carrito {
             contenido.push(obj);
 
             await fs.promises.writeFile(
-                `./db/${this.nombreArchivo}`,
+                this.nombreArchivo,
                 JSON.stringify(contenido, null, 2)
             );
             return obj.id;
@@ -40,7 +41,7 @@ class Carrito {
             Object.assign(carritoID, carrito);
 
             await fs.promises.writeFile(
-                `./db/${this.nombreArchivo}`,
+                this.nombreArchivo,
                 JSON.stringify(contenido, null, 2)
             );
 
@@ -65,14 +66,16 @@ class Carrito {
     }
 
     async GetAll() {
+        console.log("LEYENDO --------------------------");
+        console.log(this.nombreArchivo);
         try {
             const contenidoArchivo = await fs.promises.readFile(
-                `./db/${this.nombreArchivo}`,
+                this.nombreArchivo,
                 "utf-8"
             );
-
             return JSON.parse(contenidoArchivo);
         } catch (error) {
+            console.log(error);
             return [];
         }
     }
@@ -83,7 +86,7 @@ class Carrito {
         Object.assign(productoID, data);
 
         await fs.promises.writeFile(
-            `./db/${this.nombreArchivo}`,
+            this.nombreArchivo,
             JSON.stringify(contenido, null, 2)
         );
 
@@ -100,7 +103,7 @@ class Carrito {
                 contenido.splice(indexID, 1);
 
                 await fs.promises.writeFile(
-                    `./db/${this.nombreArchivo}`,
+                    this.nombreArchivo,
                     JSON.stringify(contenido, null, 2)
                 );
                 return { eliminado: id };
@@ -125,7 +128,7 @@ class Carrito {
                 contenido[indexID].productos.splice(prodIndexID, 1);
 
                 await fs.promises.writeFile(
-                    `./db/${this.nombreArchivo}`,
+                    this.nombreArchivo,
                     JSON.stringify(contenido, null, 2)
                 );
                 return { eliminado: idProd };
@@ -138,4 +141,4 @@ class Carrito {
     }
 }
 
-module.exports = Carrito;
+export default ContenedorArchivo;

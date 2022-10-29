@@ -1,9 +1,8 @@
-const express = require("express");
+import express from "express";
 const { Router } = express;
 const router = Router();
-const isAdmin = require("../server.js");
-const Productos = require("../controller/productosController");
-const productos = new Productos("productos.json");
+import { isAdmin } from "../server.js";
+import { productosDao as productos } from "../daos/index.js";
 
 router.get("/productos", async (req, res) => {
     res.status(200).json(await productos.GetAll());
@@ -76,4 +75,4 @@ router.delete("/productos/:id", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;
