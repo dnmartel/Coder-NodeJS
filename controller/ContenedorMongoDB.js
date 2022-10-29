@@ -9,31 +9,40 @@ class ContenedorMongoDB {
     }
 
     async GetAll() {
-        return this.collection.find({});
+        return await this.collection.find({});
     }
 
     async Save(obj) {
-        const result = await this.collection.create(obj);
-        return result;
+        return await this.collection.create(obj);
     }
 
     async SaveProduct(obj, id) {
-        throw new Error("No implementado");
+        return await this.collection.updateOne(
+            { _id: id },
+            { $push: { productos: obj } }
+        );
     }
 
     async GetByID(id) {
-        throw new Error("No implementado");
+        return await this.collection.find({ _id: `${id}` });
     }
 
     async Update(id, data) {
-        throw new Error("No implementado");
+        return await this.collection.findOneAndUpdate({ _id: `${id}` }, data, {
+            new: true
+        });
     }
 
     async DeleteById(id) {
-        throw new Error("No implementado");
+        return await this.collection.deleteOne({ _id: id });
     }
 
-    async DeleteProdById(id, idProd) {}
+    async DeleteProdById(id, idProd) {
+        return await this.collection.updateOne(
+            { _id: id },
+            { $pull: { productos: { id: idProd } || { _id: idProd } } }
+        );
+    }
 }
 
 export default ContenedorMongoDB;

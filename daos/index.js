@@ -20,7 +20,7 @@ switch (PERSISTENCIA) {
         productosDao = new ProductosDaoArchivo();
         carritosDao = new CarritosDaoArchivo();
         break;
-    case "mongodb":
+    case "mongo":
         const { default: ProductosDaoMongoDB } = await import(
             "./productos/ProductosDaoMongoDB.js"
         );

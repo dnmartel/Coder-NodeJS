@@ -5,7 +5,6 @@ import { carritosDao as carrito } from "../daos/index.js";
 
 router.get("/carritos", async (req, res) => {
     const carritos = await carrito.GetAll();
-    console.log("ACA", carritos);
     res.status(200).json(carritos);
 });
 router.post("/carrito", async (req, res) => {
@@ -33,7 +32,7 @@ router.get("/carrito/:id/productos", async (req, res) => {
     if (carritoID === undefined) {
         res.status(404).json({ error: "Carrito no encontrado" });
     } else {
-        res.status(200).json(carritoID.productos);
+        res.status(200).json(carritoID.productos || carritoID[0].productos);
     }
 });
 

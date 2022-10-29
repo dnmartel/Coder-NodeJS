@@ -4,7 +4,6 @@ import ContenedorMongoDB from "../../controller/ContenedorMongoDB.js";
 
 class ProductosDaoMongoDB extends ContenedorMongoDB {
     constructor() {
-        console.log("ProductosDaoMongoDB Here");
         super(
             "Producto",
             new Schema({
@@ -13,12 +12,13 @@ class ProductosDaoMongoDB extends ContenedorMongoDB {
                 codigo: { type: String, require: true },
                 foto: { type: String, require: true },
                 precio: { type: Number, require: true },
-                stock: {
+                stock: { type: Number, require: true },
+                timestamp: {
+                    type: Date,
                     default: () =>
                         new Date(+new Date() + 7 * 24 * 60 * 60 * 1000),
                     require: true
-                },
-                timestamp: { type: new Date(), require: true }
+                }
             })
         );
     }

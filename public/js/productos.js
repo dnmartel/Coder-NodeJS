@@ -15,17 +15,17 @@ async function renderProducts() {
                             ${e.nombre}
                             </header>
                             <p>Descripcion: ${e.descripcion}</p>
-                            <p>ID: ${e.id}</p>
+                            <p>ID: ${e.id || e._id}</p>
                             <p>Precio: ${e.precio}</p>
                             <p>Stock: ${e.stock}</p>
-                            <footer id="btn${e.id}">
-                            <button onclick="modificarProducto('${e.id}')">Modificar</button>
-                            <button onclick="eliminarProducto('${e.id}')">Eliminar</button>
+                            <footer id="btn${e.id || e._id}">
+                            <button onclick="modificarProducto('${e.id || e._id}')">Modificar</button>
+                            <button onclick="eliminarProducto('${e.id || e._id}')">Eliminar</button>
                             </footer>
                             `;
 
         article.classList.add("card");
-        article.id = `ID-${e.id}`;
+        article.id = `ID-${e.id || e._id}`;
         document.getElementById("productos").append(article);
     });
 }
