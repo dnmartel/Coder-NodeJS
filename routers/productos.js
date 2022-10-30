@@ -1,7 +1,8 @@
 import express from "express";
 const { Router } = express;
 const router = Router();
-import { isAdmin } from "../server.js";
+import * as dotenv from 'dotenv' 
+dotenv.config()
 import { productosDao as productos } from "../daos/index.js";
 
 router.get("/productos", async (req, res) => {
@@ -19,7 +20,7 @@ router.get("/productos/:id", async (req, res) => {
 });
 
 router.post("/productos", async (req, res) => {
-    if (isAdmin) {
+    if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 
         const data = req.body;
@@ -34,7 +35,7 @@ router.post("/productos", async (req, res) => {
 });
 
 router.put("/productos/:id", async (req, res) => {
-    if (isAdmin) {
+    if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 
         const productoID = await productos.GetByID(req.params.id);
@@ -55,7 +56,7 @@ router.put("/productos/:id", async (req, res) => {
 });
 
 router.delete("/productos/:id", async (req, res) => {
-    if (isAdmin) {
+    if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 
         const productoID = await productos.GetByID(req.params.id);

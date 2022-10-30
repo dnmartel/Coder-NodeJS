@@ -3,6 +3,8 @@ import express from "express";
 import path from "path";
 import http from "http";
 import { fileURLToPath } from "url";
+import * as dotenv from 'dotenv' 
+dotenv.config()
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,8 +18,6 @@ import productos from "./routers/productos.js";
 import carrito from "./routers/carrito.js";
 import routerError from "./routers/routerError.js";
 
-const PORT = process.env.PORT || 8080;
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -26,7 +26,7 @@ app.use("/api", productos, carrito);
 app.use("*", routerError);
 
 const server = http.createServer(app);
-server.listen(PORT, () => {
+server.listen(process.env.PORT, () => {
     console.log(
         `Servidor http esta escuchando en el puerto ${server.address().port}`
     );

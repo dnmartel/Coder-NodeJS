@@ -6,13 +6,17 @@ Ante todo, debemos tener instalado NODE JS.
 git clone https://github.com/dnmartel/Coder-NodeJS.git
 npm install
 
-Variable Administrador se setea de forma manual, archivo server.js, linea 7, por defecto en TRUE.
+Las variables de entorno se cambian desde el archivo .env
+ADMIN=true/false
+PORT=8080
+TIPO_PERSISTENCIA=memoria/json/mongo/firebase
+
 ```
 
 ## Producción
 
 ```sh
-Ver en Glitch.com
+npm start
 ```
 
 ## Desarrollo (nodemon)
