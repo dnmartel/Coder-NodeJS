@@ -17,10 +17,6 @@ class CarritosDaoMongoDB extends ContenedorMongoDB {
             })
         );
     }
-
-    /* async Save(carrito = { productos: [] }) {
-        return super.Save(carrito);
-    } */
 }
 
 export default CarritosDaoMongoDB;

@@ -31,11 +31,10 @@ class ContenedorFirebase {
                 id: doc.id,
                 ...doc.data()
             }));
-            console.log("[GetAll] Usuarios obtenidos con éxito! ->", response);
             return response;
         } catch (error) {
             console.error(
-                "[GetAll] Ocurrio un error al intentar obtener usuarios  ->",
+                "[GetAll] Ocurrio un error al intentar obtener datos ->",
                 error.message
             );
         }
@@ -48,7 +47,6 @@ class ContenedorFirebase {
             let id = uuidv4();
             let doc = query.doc(id);
             await doc.create(obj);
-            console.log("[Save] Usuarios creados con éxito!");
             return obj;
         } catch (error) {
             console.error("[Save] Ocurrio un error ->", error.message);
@@ -56,7 +54,22 @@ class ContenedorFirebase {
     }
 
     async SaveProduct(obj, id) {
-        throw new Error("No implementado");
+        try {
+            const db = admin.firestore();
+            const query = db.collection(this.collection);
+            const doc = query.doc(id);
+            let temp = [];
+            let productos = await doc.get();
+            temp = productos.data().productos;
+            temp.push(obj);
+            await doc.update("productos", temp);
+            return { "Producto agregado": obj };
+        } catch (error) {
+            console.error(
+                `[updateById] Ocurrio un error al intentar actualizar ${id} ->`,
+                error.message
+            );
+        }
     }
 
     async GetByID(id) {
@@ -67,17 +80,14 @@ class ContenedorFirebase {
             const item = await doc.get();
             const response = item.data();
             if (response) {
-                console.log(
-                    `[GetByID] Usuario ${id} obtenido con éxito! ->`,
-                    response
-                );
+                console.log(`[GetByID] ${id} obtenido con éxito! ->`, response);
                 return response;
             } else {
-                console.log(`[GetByID] Usuario ${id} no encontrado`);
+                console.log(`[GetByID] ${id} no encontrado`);
             }
         } catch (error) {
             console.error(
-                `[GetByID] Ocurrio un error al intenter obtener usuario ${id} ->`,
+                `[GetByID] Ocurrio un error al intenter obtener ${id} ->`,
                 error.message
             );
         }
@@ -89,11 +99,10 @@ class ContenedorFirebase {
             const query = db.collection(this.collection);
             const doc = query.doc(id);
             const updated = await doc.update(data);
-            console.log(`[updateById] Usuario ${id} actualizado con éxito!`);
             return updated;
         } catch (error) {
             console.error(
-                `[updateById] Ocurrio un error al intentar actualizar usuario ${id} ->`,
+                `[updateById] Ocurrio un error al intentar actualizar ${id} ->`,
                 error.message
             );
         }
@@ -105,18 +114,26 @@ class ContenedorFirebase {
             const query = db.collection(this.collection);
             const doc = query.doc(id);
             const deleted = await doc.delete();
-            console.log(`[deleteById] Usuario ${id} eliminado con éxito!`);
+            console.log(`[deleteById] ${id} eliminado con éxito!`);
             return deleted;
         } catch (error) {
             console.error(
-                `[deleteById] Ocurrio un error al intentar eliminado usuario ${id} ->`,
+                `[deleteById] Ocurrio un error al intentar eliminado ${id} ->`,
                 error.message
             );
         }
     }
 
     async DeleteProdById(id, idProd) {
-        throw new Error("No implementado");
+        const db = admin.firestore();
+        const query = db.collection(this.collection);
+        const doc = query.doc(id);
+        let productos = await doc.get();
+        productos = productos
+            .data()
+            .productos.filter((prod) => (prod.id || prod._id) !== idProd);
+        await query.doc(id).update("productos", productos);
+        return { eliminado: idProd };
     }
 }
 
