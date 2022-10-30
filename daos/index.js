@@ -2,8 +2,8 @@ import config from "../config.js";
 
 /* let PERSISTENCIA = config.PERSISTENCIA.memoria; */
 /* let PERSISTENCIA = config.PERSISTENCIA.json; */
-let PERSISTENCIA = config.PERSISTENCIA.mongo;
-/* let PERSISTENCIA = config.PERSISTENCIA.firebase; */
+/* let PERSISTENCIA = config.PERSISTENCIA.mongo; */
+let PERSISTENCIA = config.PERSISTENCIA.firebase;
 
 let productosDao;
 let carritosDao;
@@ -31,6 +31,17 @@ switch (PERSISTENCIA) {
         productosDao = new ProductosDaoMongoDB();
         carritosDao = new CarritosDaoMongoDB();
         break;
+    case "firebase":
+        const { default: ProductosDaoFirebase } = await import(
+            "./productos/ProductosDaoFirebase.js"
+        );
+        const { default: CarritosDaoFirebase } = await import(
+            "./carritos/CarritosDaoFirebase.js"
+        );
+
+        productosDao = new ProductosDaoFirebase();
+        carritosDao = new CarritosDaoFirebase();
+        break;
     case "memoria":
         const { default: ProductosDaoMem } = await import(
             "./productos/ProductosDaoMem.js"
@@ -41,6 +52,7 @@ switch (PERSISTENCIA) {
 
         productosDao = new ProductosDaoMem();
         carritosDao = new CarritosDaoMem();
+        break;
 }
 
 export { productosDao, carritosDao };
