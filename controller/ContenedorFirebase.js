@@ -1,21 +1,14 @@
 import admin from "firebase-admin";
 import { readFile } from "fs/promises";
 import { v4 as uuidv4 } from "uuid";
+import config from "../config.js";
 
 const cert = JSON.parse(
-    await readFile(
-        new URL(
-            "../db/ecommerce-node-634c3-firebase-adminsdk-1qrk7-364219ea78.json",
-            import.meta.url
-        )
-    )
+    await readFile(new URL(config.firebase.URI, import.meta.url))
 );
-
 admin.initializeApp({
     credential: admin.credential.cert(cert)
 });
-
-console.log("Firebase conectado");
 
 class ContenedorFirebase {
     constructor(collection) {

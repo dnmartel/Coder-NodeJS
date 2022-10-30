@@ -1,14 +1,9 @@
-import config from "../config.js";
-
-/* let PERSISTENCIA = config.PERSISTENCIA.memoria; */
-/* let PERSISTENCIA = config.PERSISTENCIA.json; */
-/* let PERSISTENCIA = config.PERSISTENCIA.mongo; */
-let PERSISTENCIA = config.PERSISTENCIA.firebase;
-
+import * as dotenv from 'dotenv' 
+dotenv.config()
 let productosDao;
 let carritosDao;
-console.log("TIPO DE PERSISTENCIA:", PERSISTENCIA);
-switch (PERSISTENCIA) {
+console.log("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
+switch (process.env.TIPO_PERSISTENCIA) {
     case "json":
         const { default: ProductosDaoArchivo } = await import(
             "./productos/ProductosDaoArchivo.js"
