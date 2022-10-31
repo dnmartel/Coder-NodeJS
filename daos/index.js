@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv' 
-dotenv.config()
+import * as dotenv from "dotenv";
+dotenv.config();
 let productosDao;
 let carritosDao;
 console.log("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
@@ -47,6 +47,17 @@ switch (process.env.TIPO_PERSISTENCIA) {
 
         productosDao = new ProductosDaoMem();
         carritosDao = new CarritosDaoMem();
+        break;
+    case "sql":
+        const { default: ProductosDaoSQL } = await import(
+            "./productos/ProductosDaoSQL.js"
+        );
+        const { default: CarritosDaoSQL } = await import(
+            "./carritos/CarritosDaoSQL.js"
+        );
+
+        productosDao = new ProductosDaoSQL();
+        carritosDao = new CarritosDaoSQL();
         break;
 }
 
