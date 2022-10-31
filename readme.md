@@ -9,7 +9,7 @@ npm install
 Las variables de entorno se cambian desde el archivo .env
 ADMIN=true/false
 PORT=8080
-TIPO_PERSISTENCIA=memoria/json/mongo/firebase
+TIPO_PERSISTENCIA=memoria/json/mongo/firebase/sql
 
 ```
 
