@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
     <title>Handlebars + SocketIO</title>
 </head>
 
@@ -34,23 +35,35 @@
                         <th>Foto</th>
                     </tr>
                 </thead>
-                <tbody> <!-- id="tbody-productos" -->
+                <tbody id="tbody-productos"> <!-- id="tbody-productos" -->
 
                 </tbody>
 
             </table>
         </section>
+
         <section>
-            <h4>Centro de mensajes</h4>
+            <div class="compresion">
+            <h4>Centro de mensajes</h4> <p id="compresion"></p>
+            </div>
             <form id="form-message">
                 <span id="validEmail"></span>
                 <input type="email" name="input-email" id="input-email" placeholder="Email">
+                <input type="text" name="input-name" id="input-name" placeholder="Nombre">
+                <input type="text" name="input-lastname" id="input-lastname" placeholder="Apellido">
+                <input type="number" name="input-age" id="input-age" placeholder="Edad">
+                <input type="text" name="input-alias" id="input-alias" placeholder="Alias">
+                <input type="text" name="input-avatar" id="input-avatar" placeholder="URL Avatar">
                 <input type="text" name="input-message" id="input-message" placeholder="Escribe un mensaje">
                 <button type="submit">Enviar</button>
             </form>
 
             <h5>Historial de mensajes</h1>
                 <ul id="show-message"></ul>
+        </section>
+
+        <section>
+            <a href="./api/productos-test"><button>Faker data</button></a>
         </section>
     </main>
 

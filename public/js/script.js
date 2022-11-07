@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable space-before-function-paren */
 
-async function fetchHTML(inputFetch, data) {
+async function fetchHTML(inputFetch, id, data) {
     fetch(inputFetch)
         .then((res) => {
             return res.text();
@@ -9,16 +9,22 @@ async function fetchHTML(inputFetch, data) {
         .then((text) => {
             const template = Handlebars.compile(text);
             const html = template({ data });
-            document.querySelector("tbody").innerHTML = html;
+            document.getElementById(id).innerHTML = html;
         })
         .catch((err) => console.log(err));
 }
+
 // Variables para mensajes
 let mensajes = [];
 const formMessage = document.getElementById("form-message");
 const inputEmail = document.getElementById("input-email");
 const inputMessage = document.getElementById("input-message");
 const showMessage = document.getElementById("show-message");
+const inputName = document.getElementById("input-name");
+const inputLastName = document.getElementById("input-lastname");
+const inputAge = document.getElementById("input-age");
+const inputAvatar = document.getElementById("input-avatar");
+const inputAlias = document.getElementById("input-alias");
 
 // Variables para productos
 const submitProductos = document.getElementById("submit-products");
@@ -35,7 +41,34 @@ socket.on("connect", () => {
 
 // MENSAJES
 socket.on("inicio", (data) => {
-    mensajes = data;
+    const userScheme = new normalizr.schema.Entity("users");
+
+    const authorScheme = new normalizr.schema.Entity(
+        "author",
+        { author: userScheme },
+        { idAttribute: "email" }
+    );
+
+    const textScheme = new normalizr.schema.Entity("text", {});
+    const timestampScheme = new normalizr.schema.Entity("timestamp", {});
+
+    const messagesScheme = new normalizr.schema.Entity("messagesArr", {
+        author: authorScheme
+    });
+
+    const mensajesFinal = new normalizr.schema.Entity("mensajesFinal", {
+        text: textScheme,
+        timestamp: timestampScheme,
+        messagesArr: [messagesScheme]
+    });
+
+    const reverse = normalizr.denormalize(
+        data.result,
+        mensajesFinal,
+        data.entities
+    );
+    mensajes = reverse.messagesArr;
+
     updateMessages(mensajes);
 });
 
@@ -44,11 +77,17 @@ socket.on("notificacion", (data) => {
     updateMessages(mensajes);
 });
 
-function updateMessages(messages = []) {
+socket.on("compresion", (mensajesOriginal, mensajesNormalized) => {
+    document.getElementById("compresion").innerHTML = `Tasa de compresión: %
+    ${ ((JSON.stringify(mensajesNormalized).length * 100) /
+    JSON.stringify(mensajesOriginal).length).toFixed(2) } `;
+});
+
+function updateMessages(messages) {
     showMessage.innerText = "";
     messages.forEach((data) => {
         const item = document.createElement("li");
-        item.innerHTML = `<span class="userChat">${data.email} </span><span class="dateChat">[${data.timestamp}]</span> -> <span class="msgChat">${data.message} </span>`;
+        item.innerHTML = `<span class="userChat">${data.author.email} </span><span class="dateChat">[${data.timestamp}]</span> -> <span class="msgChat">${data.text} </span><img src="${data.author.avatar}" class="avatar">`;
         showMessage.appendChild(item);
     });
 }
@@ -68,6 +107,11 @@ formMessage.addEventListener("submit", (event) => {
         const ts = dayjs().format("DD/MM/YYYY HH:mm:ss");
         const data = {
             email: inputEmail.value,
+            name: inputName.value,
+            lastname: inputLastName.value,
+            age: inputAge.value,
+            avatar: inputAvatar.value,
+            alias: inputAlias.value,
             message: inputMessage.value,
             timestamp: ts
         };
@@ -91,6 +135,5 @@ submitProductos.addEventListener("click", (e) => {
 });
 
 socket.on("refresh-products", (productos) => {
-    console.log("productos", productos);
-    fetchHTML("../views/template.handlebars", productos);
+    fetchHTML("../views/template.handlebars", "tbody-productos", productos);
 });

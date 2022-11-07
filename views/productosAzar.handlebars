@@ -1,0 +1,31 @@
+<main class="container">
+
+    <section>
+        <h3>Productos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                    <tr>
+                        <td>{{this.nombre}}</td>
+                        <td>{{this.precio}}</td>
+                        <td><img
+                                src="{{this.foto}}"
+                                alt="{{this.nombre}}"
+                                width="50px"
+                                height="50px"
+                            /></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </section>
+
+</main>

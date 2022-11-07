@@ -21,3 +21,15 @@
 .center {
     text-align: center;
 }
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.compresion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

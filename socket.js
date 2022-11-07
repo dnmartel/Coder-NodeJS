@@ -1,24 +1,10 @@
 import dayjs from "dayjs";
-import Mensajes from "./controllers/mensajes.js";
 import { Server } from "socket.io";
-import Productos from "./controllers/productos.js";
-import {
-    optionsMySQL,
-    createTableMySQL,
-    optionsSQLite3,
-    createTableSQLite3
-} from "./db/index.js";
-
-// Modificar con nombre de tabla a trabajar
-const tableMySQL = "pruebas_productos";
-const tableSQLite3 = "tabla_mensajes";
-
-createTableMySQL(tableMySQL);
-createTableSQLite3(tableSQLite3);
-const mensajes = new Mensajes(optionsSQLite3, tableSQLite3);
-const productos = new Productos(optionsMySQL, tableMySQL);
-
+import { mensajesDao, productosDao } from "./daos/index.js";
+import ControllerNormalizer from "./controllers/ControllerNormalizr.js";
 let io;
+let mensajesOriginal;
+let mensajesNormalized;
 
 export default function initSocket(httpServer) {
     io = new Server(httpServer);
@@ -28,34 +14,48 @@ export default function initSocket(httpServer) {
 function setEvent(io) {
     io.on("connection", async (clienteSocket) => {
         console.log("😁 Nuevo cliente conectado", clienteSocket.id);
-        io.emit("refresh-products", await productos.GetAll());
 
-        async function updateMessages() {
-            await mensajes.GetAll().then((data) => {
-                clienteSocket.emit("inicio", data);
-            });
-        }
-        updateMessages();
+        io.emit("refresh-products", await productosDao.GetAll());
+
+        mensajesOriginal = await mensajesDao.GetAll();
+        mensajesNormalized = await ControllerNormalizer(mensajesOriginal);
+        clienteSocket.emit("inicio", mensajesNormalized);
+        io.emit("compresion", mensajesOriginal, mensajesNormalized)
 
         // MENSAJES NUEVOS
         clienteSocket.on("nuevo-mensaje", async (data) => {
-            await mensajes.Save({
-                email: data.email,
-                message: data.message,
+            await mensajesDao.Save({
+                author: {
+                    email: data.email,
+                    nombre: data.name,
+                    apellido: data.lastname,
+                    edad: data.age,
+                    alias: data.alias,
+                    avatar: data.avatar
+                },
+                text: data.message,
                 timestamp: data.timestamp
             });
             io.emit("notificacion", {
-                email: data.email,
-                message: data.message,
+                author: {
+                    email: data.email,
+                    nombre: data.name,
+                    apellido: data.lastname,
+                    edad: data.age,
+                    alias: data.alias,
+                    avatar: data.avatar
+                },
+                text: data.message,
                 timestamp: dayjs().format("DD/MM/YYYY HH:mm:ss")
             });
+            io.emit("compresion", mensajesOriginal, mensajesNormalized)
         });
 
         // PRODUCTOS NUEVOS
         clienteSocket.on("submit-products", async (data) => {
             console.log("🎈 Productos recibidos del formulario");
-            await productos.Save(data);
-            io.emit("refresh-products", await productos.GetAll());
+            await productosDao.Save(data);
+            io.emit("refresh-products", await productosDao.GetAll());
         });
 
         clienteSocket.on("disconnect", () => {
