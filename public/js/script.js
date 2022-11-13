@@ -41,48 +41,46 @@ socket.on("connect", () => {
 
 // MENSAJES
 socket.on("inicio", (data) => {
-    const userScheme = new normalizr.schema.Entity("users");
+    const mensajes = denorm(data);
+    updateMessages(mensajes);
+});
 
+socket.on("notificacion", (data) => {
+    const mensajes = denorm(data);
+    updateMessages(mensajes);
+});
+
+socket.on("compresion", (mensajesOriginal, mensajesNormalized) => {
+    document.getElementById("compresion").innerHTML = `Tasa de compresión: %
+    ${(
+        (JSON.stringify(mensajesNormalized).length * 100) /
+        JSON.stringify(mensajesOriginal).length
+    ).toFixed(2)} `;
+});
+
+function denorm(msg) {
     const authorScheme = new normalizr.schema.Entity(
         "author",
-        { author: userScheme },
+        {},
         { idAttribute: "email" }
     );
-
-    const textScheme = new normalizr.schema.Entity("text", {});
-    const timestampScheme = new normalizr.schema.Entity("timestamp", {});
 
     const messagesScheme = new normalizr.schema.Entity("messagesArr", {
         author: authorScheme
     });
 
     const mensajesFinal = new normalizr.schema.Entity("mensajesFinal", {
-        text: textScheme,
-        timestamp: timestampScheme,
         messagesArr: [messagesScheme]
     });
 
     const reverse = normalizr.denormalize(
-        data.result,
+        msg.result,
         mensajesFinal,
-        data.entities
+        msg.entities
     );
     mensajes = reverse.messagesArr;
-
-    updateMessages(mensajes);
-});
-
-socket.on("notificacion", (data) => {
-    mensajes.push(data);
-    updateMessages(mensajes);
-});
-
-socket.on("compresion", (mensajesOriginal, mensajesNormalized) => {
-    document.getElementById("compresion").innerHTML = `Tasa de compresión: %
-    ${ ((JSON.stringify(mensajesNormalized).length * 100) /
-    JSON.stringify(mensajesOriginal).length).toFixed(2) } `;
-});
-
+    return mensajes;
+}
 function updateMessages(messages) {
     showMessage.innerText = "";
     messages.forEach((data) => {

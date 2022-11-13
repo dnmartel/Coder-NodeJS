@@ -27,16 +27,11 @@ const ControllerNormalizer = async (data) => {
         { idAttribute: "email" }
     );
 
-    const textScheme = new schema.Entity("text", {});
-    const timestampScheme = new schema.Entity("timestamp", {});
-
     const messagesScheme = new schema.Entity("messagesArr", {
         author: authorScheme
     });
 
     const mensajesFinal = new schema.Entity("mensajesFinal", {
-        text: textScheme,
-        timestamp: timestampScheme,
         messagesArr: [messagesScheme]
     });
 

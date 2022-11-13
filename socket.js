@@ -20,7 +20,7 @@ function setEvent(io) {
         mensajesOriginal = await mensajesDao.GetAll();
         mensajesNormalized = await ControllerNormalizer(mensajesOriginal);
         clienteSocket.emit("inicio", mensajesNormalized);
-        io.emit("compresion", mensajesOriginal, mensajesNormalized)
+        io.emit("compresion", mensajesOriginal, mensajesNormalized);
 
         // MENSAJES NUEVOS
         clienteSocket.on("nuevo-mensaje", async (data) => {
@@ -36,19 +36,10 @@ function setEvent(io) {
                 text: data.message,
                 timestamp: data.timestamp
             });
-            io.emit("notificacion", {
-                author: {
-                    email: data.email,
-                    nombre: data.name,
-                    apellido: data.lastname,
-                    edad: data.age,
-                    alias: data.alias,
-                    avatar: data.avatar
-                },
-                text: data.message,
-                timestamp: dayjs().format("DD/MM/YYYY HH:mm:ss")
-            });
-            io.emit("compresion", mensajesOriginal, mensajesNormalized)
+            mensajesOriginal = await mensajesDao.GetAll();
+            mensajesNormalized = await ControllerNormalizer(mensajesOriginal);
+            io.emit("notificacion", mensajesNormalized);
+            io.emit("compresion", mensajesOriginal, mensajesNormalized);
         });
 
         // PRODUCTOS NUEVOS
