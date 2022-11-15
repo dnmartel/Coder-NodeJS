@@ -6,7 +6,6 @@ Ante todo, debemos tener instalado NODE JS.
 git clone https://github.com/dnmartel/Coder-NodeJS.git
 npm install
 ```
-Acá estamos configurando una variable de entorno para nuestro proyecto, en este caso el puerto que usará el servidor.
 
 ## Producción
 
