@@ -33,3 +33,21 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 5px;
+}
+.login * {
+    padding: 0;
+    margin: .75em 1em;
+}
+
+.login #submit-username {
+    height: fit-content;
+    margin: 10px;
+    font-size: .8em;
+}

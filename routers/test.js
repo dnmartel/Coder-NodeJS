@@ -4,7 +4,6 @@ const { Router } = express;
 const router = Router();
 import { faker } from "@faker-js/faker/locale/es";
 
-// GET '/' -> devuelve la vista renderizada.
 export default router.get("/api/productos-test", (req, res) => {
     try {
         let data = { data: [] };

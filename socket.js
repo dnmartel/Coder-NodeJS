@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { Server } from "socket.io";
 import { mensajesDao, productosDao } from "./daos/index.js";
 import ControllerNormalizer from "./controllers/ControllerNormalizr.js";
