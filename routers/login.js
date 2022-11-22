@@ -1,44 +1,63 @@
 // Importo dependencias de express
-import express from "express";
-const { Router } = express;
+import { Router } from "express";
+import passport from "passport";
+
 const router = Router();
-// GET '/' -> devuelve la vista renderizada.
 
 router.get("/", (req, res) => {
-    try {
-        res.redirect("./login");
-    } catch (error) {
-        res.send("Error");
+    if (!req.isAuthenticated()) {
+        res.render("login");
+    } else {
+        const { user } = req;
+        let email = user.email;
+        res.render("productos", { email });
     }
 });
-router.get("/login", (req, res) => {
-    try {
-        if (req.session.logged) {
-            console.log(`Usuario con sesión activa -> ${req.session.username}`);
-            res.redirect("./productos");
+
+router.post(
+    "/login",
+    passport.authenticate("sign-in", {
+        successRedirect: "/",
+        failureRedirect: "/failureLogin"
+    }),
+    (req, res) => {
+        res.redirect("/");
+    }
+);
+
+router.get("/failureLogin", (req, res) => {
+    res.render("failureLogin.handlebars");
+});
+
+router.post("/logout", (req, res) => {
+    const { email } = req.body;
+    req.logout((error) => {
+        if (!error) {
+            res.render("logout.handlebars", { email });
         } else {
-            res.render("./login.handlebars");
+            res.send("Ocurrio un  error", error.message);
         }
-    } catch (error) {
-        res.send("Error");
-    }
+    });
 });
 
-router.post("/login", (req, res) => {
-    const { username } = req.body;
-    req.session.username = username;
-    req.session.logged = true;
-    res.redirect("./login");
+router.get("/register", (req, res) => {
+    res.render("./register.handlebars");
 });
 
-router.get("/logout", (req, res) => {
-    try {
-        const username = req.session.username;
-        req.session.destroy();
-        res.render("./logout.handlebars", { username });
-    } catch (error) {
-        res.send("Ha ocurrido un error", error.message);
-    }
+router.get("/failureRegister", (req, res) => {
+    res.render("failureRegister");
 });
+
+router.post(
+    "/register",
+    passport.authenticate("sign-up", {
+        successRedirect: "/",
+        failureRedirect: "/failureRegister"
+    }),
+    (req, res) => {
+        const { user } = req;
+        console.log("register -> user", user);
+    }
+);
 
 export default router;

@@ -5,8 +5,8 @@ const router = Router();
 // GET '/' -> devuelve la vista renderizada.
 router.get("/productos", (req, res) => {
     if (req.session.logged) {
-        const username = req.session.username;
-        res.render("./productos.handlebars", { username });
+        const email = req.session.email;
+        res.render("./productos.handlebars", { email });
     } else {
         res.redirect("./login");
     }

@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 let productosDao;
 let mensajesDao;
+let usuariosDao;
 console.log("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
 switch (process.env.TIPO_PERSISTENCIA) {
     case "mongo":
@@ -11,20 +12,14 @@ switch (process.env.TIPO_PERSISTENCIA) {
         const { default: MensajesDaoMongoDB } = await import(
             "./mensajes/MensajesDaoMongoDB.js"
         );
+        const { default: UsuariosDaoMongoDB } = await import(
+            "./usuarios/UsuariosDaoMongoDB.js"
+        );
 
         productosDao = new ProductosDaoMongoDB();
         mensajesDao = new MensajesDaoMongoDB();
-        break;
-    case "firebase":
-        const { default: ProductosDaoFirebase } = await import(
-            "./productos/ProductosDaoFirebase.js"
-        );
-        const { default: MensajesDaoFirebase } = await import(
-            "./mensajes/MensajesDaoFirebase.js"
-        );
+        usuariosDao = new UsuariosDaoMongoDB();
 
-        productosDao = new ProductosDaoFirebase();
-        mensajesDao = new MensajesDaoFirebase();
         break;
     case "memoria":
         const { default: ProductosDaoMem } = await import(
@@ -39,4 +34,4 @@ switch (process.env.TIPO_PERSISTENCIA) {
         break;
 }
 
-export { productosDao, mensajesDao };
+export { productosDao, mensajesDao, usuariosDao };

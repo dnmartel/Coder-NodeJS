@@ -4,8 +4,8 @@ import config from "../config.js";
 await mongoose.connect(config.mongoDB.URI);
 
 class ContenedorMongoDB {
-    constructor(modelName, schema) {
-        this.collection = mongoose.model(modelName, schema);
+    constructor(schema) {
+        this.collection = schema;
     }
 
     async GetAll() {

@@ -1,9 +1,12 @@
     <h1 class="center">Express web server</h1>
     <div class="login">
-        <p id="bienvenido"> Bienvenido {{{username}}}</p>
-        <form id="submit" action="/logout" method="GET">
+        <p id="bienvenido">Bienvenido<strong>{{{email}}}</strong></p>
+        
+        <form id="submit" action="/logout" method="POST">
+            <input type="hidden" name="email" value="{{email}}">
             <button role="button" type="submit" id="submit-username">Desloguear</button>
         </form>
+
     </div>
     <main class="container">
         <section>
