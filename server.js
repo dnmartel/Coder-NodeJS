@@ -6,9 +6,8 @@ import path from "path";
 import http from "http";
 import handlebars from "express-handlebars";
 import initSocket from "./socket.js";
-import loginRouter from "./routers/login.js";
-import productosRouter from "./routers/productos.js";
-import testRouter from "./routers/test.js";
+import routers from "./routers/index.js";
+import randomsRouter from "./routers/randoms.js";
 import { fileURLToPath } from "url";
 import * as dotenv from "dotenv";
 import config from "./config.js";
@@ -16,10 +15,17 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import usersModel from "./models/usuariosModel.js";
 import bcrypt from "bcrypt";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
 const app = express();
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 dotenv.config();
+
+// Configuración de YARGS segun documentación
+export const argv = yargs(hideBin(process.argv)).default({
+    p: 8080
+}).argv;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -134,7 +140,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Defino ruta principal y subrutas
-app.use("/", loginRouter, productosRouter, testRouter);
+app.use("/", routers, randomsRouter);
 app.use(express.static(path.join(__dirname, "public")));
 
 // View engine config
@@ -145,7 +151,7 @@ app.set("views", path.join(__dirname, "views"));
 // Instancio y pongo en escucha el servidor
 const server = http.createServer(app);
 initSocket(server);
-server.listen(process.env.PORT, () => {
+server.listen(argv.p, () => {
     console.log(
         `Servidor http esta escuchando en el puerto ${server.address().port}`
     );

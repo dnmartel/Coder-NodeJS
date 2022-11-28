@@ -8,7 +8,7 @@ router.get("/productos", (req, res) => {
         const email = req.session.email;
         res.render("./productos.handlebars", { email });
     } else {
-        res.redirect("./login");
+        res.redirect("./");
     }
 });
 
