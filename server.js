@@ -17,15 +17,25 @@ import usersModel from "./models/usuariosModel.js";
 import bcrypt from "bcrypt";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-
-const app = express();
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-dotenv.config();
+import cluster from "cluster";
+import os from "os";
 
 // Configuración de YARGS segun documentación
-export const argv = yargs(hideBin(process.argv)).default({
-    p: 8080
+const argv = yargs(hideBin(process.argv)).default({
+    p: 8080,
+    port: 8080,
+    modo: "fork"
 }).argv;
+
+console.log(argv);
+
+
+const app = express();
+const advancedOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+};
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -148,15 +158,63 @@ app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
-// Instancio y pongo en escucha el servidor
-const server = http.createServer(app);
-initSocket(server);
-server.listen(argv.p, () => {
-    console.log(
-        `Servidor http esta escuchando en el puerto ${server.address().port}`
-    );
-    console.log(`http://localhost:${server.address().port}`);
-});
+// CLUSTER
+if (argv.modo === "cluster") {
+    if (cluster.isPrimary) {
+        const numCPU = os.cpus().length;
 
-// Manejo de errores
-server.on("error", (error) => console.log(`Error en servidor ${error}`));
+        console.log(`Proceso principal: ${process.pid}`, "---  Cores", numCPU);
+        for (let i = 0; i < numCPU; i++) {
+            cluster.fork();
+        }
+        cluster.on("exit", (worker, code, signal) => {
+            console.log(
+                `Worker killed ${worker.process.pid} | code: ${code} | signal: ${signal} `
+            );
+            console.log("Configurando nuevo Worker 👌");
+            cluster.fork();
+        });
+    } else {
+        // Instancio y pongo en escucha el servidor
+        const server = http.createServer(app);
+        initSocket(server);
+        server.listen(argv.p || argv.port, () => {
+            console.log(
+                `Servidor http esta escuchando en el puerto ${
+                    server.address().port
+                }`
+            );
+            console.log(
+                `Servidor corriendo en http://localhost:${
+                    server.address().port
+                } PID: ${process.pid} - MODO: ${argv.modo}`
+            );
+        });
+
+        // Manejo de errores
+        server.on("error", (error) =>
+            console.log(`Error en servidor ${error}`)
+        );
+    }
+}
+// FORK
+if (argv.modo === "fork") {
+    // Instancio y pongo en escucha el servidor
+    const server = http.createServer(app);
+    initSocket(server);
+    server.listen(argv.p || argv.port, () => {
+        console.log(
+            `Servidor http esta escuchando en el puerto ${
+                server.address().port
+            }`
+        );
+        console.log(
+            `Servidor corriendo en http://localhost:${
+                server.address().port
+            } PID: ${process.pid} - MODO: ${argv.modo}`
+        );
+    });
+
+    // Manejo de errores
+    server.on("error", (error) => console.log(`Error en servidor ${error}`));
+}

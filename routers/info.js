@@ -1,5 +1,6 @@
 // Importo dependencias de express
 import { Router } from "express";
+import os from "os";
 
 const router = Router();
 router.get("/info", (req, res) => {
@@ -19,7 +20,9 @@ router.get("/info", (req, res) => {
 
             cwd: process.cwd(),
 
-            rss: process.memoryUsage().rss
+            rss: process.memoryUsage().rss,
+
+            cores: os.cpus().length
         });
     }
 });
