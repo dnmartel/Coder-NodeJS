@@ -22,6 +22,7 @@
     "express-handlebars": "6.0.6",
     "express-session": "^1.17.3",
     "forever": "4.0.3",
+    "minimist": "1.2.7",
     "mongoose": "6.7.1",
     "node-fetch": "3.2.10",
     "nodemon": "2.0.19",

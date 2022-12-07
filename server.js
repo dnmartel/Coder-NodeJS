@@ -15,20 +15,23 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import usersModel from "./models/usuariosModel.js";
 import bcrypt from "bcrypt";
-import yargs from "yargs";
-import { hideBin } from "yargs/helpers";
+import minimist from "minimist";
 import cluster from "cluster";
 import os from "os";
 
-// Configuración de YARGS segun documentación
-const argv = yargs(hideBin(process.argv)).default({
-    p: 8080,
-    port: 8080,
-    modo: "fork"
-}).argv;
+const opts = {
+    default: {
+        port: 8080,
+        modo: "fork"
+    },
+    alias: {
+        p: "port",
+        m: "modo"
+    }
+};
 
-console.log(argv);
-
+// Configuración de Minimist segun documentación
+const argv = minimist(process.argv.slice(2), opts);
 
 const app = express();
 const advancedOptions = {
@@ -151,7 +154,15 @@ app.use(passport.session());
 
 // Defino ruta principal y subrutas
 app.use("/", routers, randomsRouter);
-app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/datos", (req, res) => {
+    console.log(`port ${argv.p} --> fyh ${Date.now()}`);
+    res.send(
+        `servidor express <span style="color: blueviolet"> Nginx </span> en ${argv.p}`
+    );
+});
+
+/* app.use(express.static(path.join(__dirname, "public"))); */
 
 // View engine config
 app.engine("handlebars", handlebars.engine());
@@ -178,7 +189,7 @@ if (argv.modo === "cluster") {
         // Instancio y pongo en escucha el servidor
         const server = http.createServer(app);
         initSocket(server);
-        server.listen(argv.p || argv.port, () => {
+        server.listen(argv.p, () => {
             console.log(
                 `Servidor http esta escuchando en el puerto ${
                     server.address().port
@@ -202,7 +213,7 @@ if (argv.modo === "fork") {
     // Instancio y pongo en escucha el servidor
     const server = http.createServer(app);
     initSocket(server);
-    server.listen(argv.p || argv.port, () => {
+    server.listen(argv.p, () => {
         console.log(
             `Servidor http esta escuchando en el puerto ${
                 server.address().port
