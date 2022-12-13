@@ -28,7 +28,7 @@ node .\server.js -p XXXX (-p PORT, por defecto 8080)
 <http://localhost:8080/info> requiere estar logueado
 <http://localhost:8080/api/randoms?cant=50000> (posibilidad de usar query param "cant", por defecto 100000000)
 
-## Consigna - Parte 1
+## Consignas y comandos
 
 ### Tomando con base el proyecto que vamos realizando, agregar un parámetro más en la ruta de comando que permita ejecutar al servidor en modo fork o cluster. Dicho parámetro será 'FORK' en el primer caso y 'CLUSTER' en el segundo, y de no pasarlo, el servidor iniciará en modo fork
 
