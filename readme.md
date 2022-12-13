@@ -78,7 +78,7 @@ FINALIZAR - pm2 delete all
 - Luego, modificar la configuración para que todas las consultas a /api/randoms sean redirigidas a un cluster de servidores gestionado desde nginx, repartiéndolas equitativamente entre 4 instancias escuchando en los puertos 8082, 8083, 8084 y 8085 respectivamente.
 
 ```sh
-Renombrar el archivo NGINX/config/nginx.config_consigna1 como nginx.config
+Renombrar el archivo NGINX/config/nginx.config_consigna2 como nginx.config
 Correr nginx.exe desde la carpeta NGINX adjunta.
 
 pm2 start --name="i01" server.js -- -p 8080

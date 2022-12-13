@@ -170,46 +170,21 @@ app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
 // CLUSTER
-if (argv.modo === "cluster") {
-    if (cluster.isPrimary) {
-        const numCPU = os.cpus().length;
+if (argv.modo === "cluster" && cluster.isPrimary) {
+    const numCPU = os.cpus().length;
 
-        console.log(`Proceso principal: ${process.pid}`, "---  Cores", numCPU);
-        for (let i = 0; i < numCPU; i++) {
-            cluster.fork();
-        }
-        cluster.on("exit", (worker, code, signal) => {
-            console.log(
-                `Worker killed ${worker.process.pid} | code: ${code} | signal: ${signal} `
-            );
-            console.log("Configurando nuevo Worker 👌");
-            cluster.fork();
-        });
-    } else {
-        // Instancio y pongo en escucha el servidor
-        const server = http.createServer(app);
-        initSocket(server);
-        server.listen(argv.p, () => {
-            console.log(
-                `Servidor http esta escuchando en el puerto ${
-                    server.address().port
-                }`
-            );
-            console.log(
-                `Servidor corriendo en http://localhost:${
-                    server.address().port
-                } PID: ${process.pid} - MODO: ${argv.modo}`
-            );
-        });
-
-        // Manejo de errores
-        server.on("error", (error) =>
-            console.log(`Error en servidor ${error}`)
-        );
+    console.log(`Proceso principal: ${process.pid}`, "---  Cores", numCPU);
+    for (let i = 0; i < numCPU; i++) {
+        cluster.fork();
     }
-}
-// FORK
-if (argv.modo === "fork") {
+    cluster.on("exit", (worker, code, signal) => {
+        console.log(
+            `Worker killed ${worker.process.pid} | code: ${code} | signal: ${signal} `
+        );
+        console.log("Configurando nuevo Worker 👌");
+        cluster.fork();
+    });
+} else { // FORK
     // Instancio y pongo en escucha el servidor
     const server = http.createServer(app);
     initSocket(server);
