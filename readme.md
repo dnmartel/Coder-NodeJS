@@ -25,66 +25,71 @@ npm run dev
 node .\server.js -p XXXX (-p PORT, por defecto 8080)
 ```
 
-<http://localhost:8080/info> requiere estar logueado
+<http://localhost:8080/info> NO requiere estar logueado
 <http://localhost:8080/api/randoms?cant=50000> (posibilidad de usar query param "cant", por defecto 100000000)
 
 ## Consignas y comandos
 
-### Tomando con base el proyecto que vamos realizando, agregar un parámetro más en la ruta de comando que permita ejecutar al servidor en modo fork o cluster. Dicho parámetro será 'FORK' en el primer caso y 'CLUSTER' en el segundo, y de no pasarlo, el servidor iniciará en modo fork
-
-- Agregar en la vista info, el número de procesadores presentes en el servidor.✅
-- Ejecutar el servidor (modos FORK y CLUSTER) con nodemon verificando el número de procesos tomados por node.
+### Incorporar al proyecto de servidor de trabajo la compresión gzip. Verificar sobre la ruta /info con y sin compresión, la diferencia de cantidad de bytes devueltos en un caso y otro
 
 ```sh
-NODEMON
-FORK ✅ nodemon server.js -p 8081 -m fork
-CLUSTER ✅ nodemon server.js -p 8082 -m cluster
+Se aplica compression a nivel servidor - Se compara en ruta /info --> pasa de 1.5kb a 922 bytes
 ```
 
-- Ejecutar el servidor (con los parámetros adecuados) utilizando Forever, verificando su correcta operación. Listar los procesos por Forever y por sistema operativo.
+### Luego implementar loggueo (con alguna librería vista en clase) que registre lo siguiente: -Ruta y método de todas las peticiones recibidas por el servidor (info) -Ruta y método de las peticiones a rutas inexistentes en el servidor (warning) -Errores lanzados por las apis de mensajes y productos, únicamente (error)
+
+#### Considerar el siguiente criterio: -Loggear todos los niveles a consola (info, warning y error) -Registrar sólo los logs de warning a un archivo llamada warn.log -Enviar sólo los logs de error a un archivo llamada error.log
 
 ```sh
-FOREVER
-FORK ✅ forever -w start server.js -p 8081 -m fork
-CLUSTER ✅ forever -w start server.js -p 8082 -m cluster
-
-LISTAR - forever list
+Se incorpora una ruta para que matchee aquellas rutas invalidas o no definidas anteriormente.
+Se aplica la configuración solicitada a través del archivo alojado en ./log/logger.js
+Además, en la misma carpeta se deja registro de los errores y warnings en los archivos solicitados.
 ```
 
-- Ejecutar el servidor (con los parámetros adecuados: modo FORK) utilizando PM2 en sus modos modo fork y cluster. Listar los procesos por PM2 y por sistema operativo. Tanto en Forever como en PM2 permitir el modo escucha, para que la actualización del código del servidor se vea reflejado inmediatamente en todos los procesos.
+### Luego, realizar el análisis completo de performance del servidor con el que venimos trabajando. Vamos a trabajar sobre la ruta '/info', en modo fork, agregando ó extrayendo un console.log de la información colectada antes de devolverla al cliente. Para ambas condiciones (con o sin console.log) en la ruta '/info' OBTENER
+
+#### 1) El perfilamiento del servidor, realizando el test con --prof de node.js. Analizar los resultados obtenidos luego de procesarlos con --prof-process. Utilizaremos como test de carga Artillery en línea de comandos, emulando 50 conexiones concurrentes con 20 request por cada una. Extraer un reporte con los resultados en archivo de texto
 
 ```sh
-DESDE CMD (en windows)
-FORK ✅ pm2 start --name="i01" server.js --watch -- -p 8081
-CLUSTER ✅  pm2 start --name="i02" server.js --watch -i max -- -p 8082
-
-LISTAR - pm2 monit
+Resultados dentro de la carpeta /profilling/1
+Al ver ambos archivos (result_conlog.txt vs result_sinlog.txt) podemos observar en el apartado de Summary, la diferencia de ticks que ocupa la ejecución sin tener el console.log (result_sinlog.txt) es mucho menor (8398) a comparación de la ejecución que si lo contiene (17228). 
 ```
 
-- Configurar Nginx para balancear cargas de nuestro servidor de la siguiente manera:
-Redirigir todas las consultas a /api/randoms a un cluster de servidores escuchando en el puerto 8081. El cluster será creado desde node utilizando el módulo nativo cluster.
-El resto de las consultas, redirigirlas a un servidor individual escuchando en el puerto 8080.
+#### Luego utilizaremos Autocannon en línea de comandos, emulando 100 conexiones concurrentes realizadas en un tiempo de 20 segundos. Extraer un reporte con los resultados (puede ser un print screen de la consola)
+
+![Autocannon](./profilling/autocannon/autocannon.png)
 
 ```sh
-Renombrar el archivo NGINX/config/nginx.config_consigna1 como nginx.config
-Correr nginx.exe desde la carpeta NGINX adjunta.
-
-pm2 start --name="i01" server.js -- -p 8081 -m cluster
-pm2 start --name="i02" server.js -- -p 8080
-
-FINALIZAR - pm2 delete all
+Imagen adjunta en /profilling/autocannon/autocannon.png
+Se pueden observar los siguientes valores corriendo un test de 20 segundos, con 100 conexiones.
+┌─────────┬────────┬────────┬─────────┬─────────┬───────────┬───────────┬─────────┐
+│ Stat    │ 2.5%   │ 50%    │ 97.5%   │ 99%     │ Avg       │ Stdev     │ Max     │
+├─────────┼────────┼────────┼─────────┼─────────┼───────────┼───────────┼─────────┤
+│ Latency │ 144 ms │ 969 ms │ 1482 ms │ 1938 ms │ 913.87 ms │ 287.98 ms │ 2022 ms │
+└─────────┴────────┴────────┴─────────┴─────────┴───────────┴───────────┴─────────┘
+┌───────────┬─────────┬─────────┬────────┬────────┬────────┬─────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%    │ 97.5%  │ Avg    │ Stdev   │ Min     │
+├───────────┼─────────┼─────────┼────────┼────────┼────────┼─────────┼─────────┤
+│ Req/Sec   │ 26      │ 26      │ 111    │ 121    │ 106.15 │ 19.5    │ 26      │
+├───────────┼─────────┼─────────┼────────┼────────┼────────┼─────────┼─────────┤
+│ Bytes/Sec │ 43.1 kB │ 43.1 kB │ 184 kB │ 201 kB │ 176 kB │ 32.3 kB │ 43.1 kB │
+└───────────┴─────────┴─────────┴────────┴────────┴────────┴─────────┴─────────
 ```
 
-- Luego, modificar la configuración para que todas las consultas a /api/randoms sean redirigidas a un cluster de servidores gestionado desde nginx, repartiéndolas equitativamente entre 4 instancias escuchando en los puertos 8082, 8083, 8084 y 8085 respectivamente.
+#### 2) El perfilamiento del servidor con el modo inspector de node.js --inspect. Revisar el tiempo de los procesos menos performantes sobre el archivo fuente de inspección
 
 ```sh
-Renombrar el archivo NGINX/config/nginx.config_consigna2 como nginx.config
-Correr nginx.exe desde la carpeta NGINX adjunta.
+    No se encuentran funciones poco performantes listadas en el archivo server.js dentro del node inspect.
+```
 
-pm2 start --name="i01" server.js -- -p 8080
-pm2 start --name="i02" server.js -- -p 8082
-pm2 start --name="i03" server.js -- -p 8083
-pm2 start --name="i04" server.js -- -p 8084
-pm2 start --name="i05" server.js -- -p 8085
+#### 3) El diagrama de flama con 0x, emulando la carga con Autocannon con los mismos parámetros anteriores. Realizar un informe en formato pdf sobre las pruebas realizadas incluyendo los resultados de todos los test (texto e imágenes)
 
+```sh
+Se adjunta en la carpeta ./profilling/0x/11328.0x/flamegraph.html , junto con el resto de los archivos generados por la herramienta. En el se pueden ver procesos cortos, algunos picos pero sin mesetas, lo que nos hace pensar que los procesos se ejecutan sin bloqueos y de forma eficiente.
+```
+
+#### 👉 Al final incluir la conclusión obtenida a partir del análisis de los datos
+
+```sh
+En lineas generales se puede ver en los análisis y pruebas realizadas que el servidor no posee mayores problemas de performance. Esto se corrobora despues de ver los test de artillery, node --inspect y autocannon + 0x. También, hay que tener en cuenta que cualquier agregado innecesario (como exceso de console.log) pueden afectar al rendimiento del servidor en producción, por lo que no son para nada recomendables.
 ```

@@ -19,7 +19,7 @@ import cluster from "cluster";
 import os from "os";
 import compression from "compression";
 
-const opts = {
+const optsArgv = {
     default: {
         port: 8080,
         modo: "fork"
@@ -31,7 +31,7 @@ const opts = {
 };
 
 // Configuración de Minimist segun documentación
-const argv = minimist(process.argv.slice(2), opts);
+const argv = minimist(process.argv.slice(2), optsArgv);
 
 const app = express();
 const advancedOptions = {

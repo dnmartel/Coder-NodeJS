@@ -73,23 +73,3 @@
   level: 'warn',
   timestamp: '2022-12-14T01:27:21.408Z'
 }
-{
-  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
-  level: 'warn',
-  timestamp: '2022-12-14T01:27:22.039Z'
-}
-{
-  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
-  level: 'warn',
-  timestamp: '2022-12-14T01:27:27.244Z'
-}
-{
-  message: 'Ruta: /datos - Metodo: GET - Ruta inexistente.',
-  level: 'warn',
-  timestamp: '2022-12-14T01:28:43.200Z'
-}
-{
-  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
-  level: 'warn',
-  timestamp: '2022-12-14T01:28:43.551Z'
-}
