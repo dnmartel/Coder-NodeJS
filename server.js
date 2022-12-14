@@ -7,7 +7,6 @@ import http from "http";
 import handlebars from "express-handlebars";
 import initSocket from "./socket.js";
 import routers from "./routers/index.js";
-import randomsRouter from "./routers/randoms.js";
 import { fileURLToPath } from "url";
 import * as dotenv from "dotenv";
 import config from "./config.js";
@@ -18,6 +17,7 @@ import bcrypt from "bcrypt";
 import minimist from "minimist";
 import cluster from "cluster";
 import os from "os";
+import compression from "compression";
 
 const opts = {
     default: {
@@ -152,17 +152,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Compression a nivel servidor - Se compara en ruta /info, pasa de 1.5kb a 922 bytes
+app.use(compression());
+
+app.use(express.static(path.join(__dirname, "public")));
+
 // Defino ruta principal y subrutas
-app.use("/", routers, randomsRouter);
-
-app.get("/datos", (req, res) => {
-    console.log(`port ${argv.p} --> fyh ${Date.now()}`);
-    res.send(
-        `servidor express <span style="color: blueviolet"> Nginx </span> en ${argv.p}`
-    );
-});
-
-/* app.use(express.static(path.join(__dirname, "public"))); */
+app.use("/", routers);
 
 // View engine config
 app.engine("handlebars", handlebars.engine());
@@ -184,7 +180,8 @@ if (argv.modo === "cluster" && cluster.isPrimary) {
         console.log("Configurando nuevo Worker 👌");
         cluster.fork();
     });
-} else { // FORK
+} else {
+    // FORK
     // Instancio y pongo en escucha el servidor
     const server = http.createServer(app);
     initSocket(server);

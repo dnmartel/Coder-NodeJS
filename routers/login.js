@@ -1,16 +1,23 @@
 // Importo dependencias de express
 import { Router } from "express";
 import passport from "passport";
+import { logger } from "../log/logger.js";
 
 const router = Router();
 
 router.get("/", (req, res) => {
-    if (!req.isAuthenticated()) {
-        res.render("login");
-    } else {
-        const { user } = req;
-        let email = user.email;
-        res.render("productos", { email });
+    try {
+        if (!req.isAuthenticated()) {
+            logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+            res.render("login");
+        } else {
+            const { user } = req;
+            let email = user.email;
+            logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+            res.render("productos", { email });
+        }
+    } catch (error) {
+        logger.error(`Error: ${error.message}`);
     }
 });
 
@@ -21,31 +28,56 @@ router.post(
         failureRedirect: "/failureLogin"
     }),
     (req, res) => {
-        res.redirect("/");
+        try {
+            logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+            res.redirect("/");
+        } catch (error) {
+            logger.error(`Error: ${error.message}`);
+        }
     }
 );
 
 router.get("/failureLogin", (req, res) => {
-    res.render("failureLogin.handlebars");
+    try {
+        logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+        res.render("failureLogin.handlebars");
+    } catch (error) {
+        logger.error(`Error: ${error.message}`);
+    }
 });
 
 router.post("/logout", (req, res) => {
-    const { email } = req.body;
-    req.logout((error) => {
-        if (!error) {
-            res.render("logout.handlebars", { email });
-        } else {
-            res.send("Ocurrio un  error", error.message);
-        }
-    });
+    try {
+        const { email } = req.body;
+        logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+        req.logout((error) => {
+            if (!error) {
+                res.render("logout.handlebars", { email });
+            } else {
+                res.send("Ocurrio un  error", error.message);
+            }
+        });
+    } catch (error) {
+        logger.error(`Error: ${error.message}`);
+    }
 });
 
 router.get("/register", (req, res) => {
-    res.render("./register.handlebars");
+    try {
+        logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+        res.render("./register.handlebars");
+    } catch (error) {
+        logger.error(`Error: ${error.message}`);
+    }
 });
 
 router.get("/failureRegister", (req, res) => {
-    res.render("failureRegister");
+    try {
+        logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+        res.render("failureRegister");
+    } catch (error) {
+        logger.error(`Error: ${error.message}`);
+    }
 });
 
 router.post(
@@ -55,8 +87,13 @@ router.post(
         failureRedirect: "/failureRegister"
     }),
     (req, res) => {
-        const { user } = req;
-        console.log("register -> user", user);
+        try {
+            logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
+            const { user } = req;
+            console.log("register -> user", user);
+        } catch (error) {
+            logger.error(`Error: ${error.message}`);
+        }
     }
 );
 

@@ -1,0 +1,95 @@
+{
+  message: 'Ruta: /info - Metodo: GET - Intento de acceso sin login.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:22:54.567Z'
+}
+{
+  message: 'Ruta: /pistacho - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:33:26.669Z'
+}
+{
+  message: 'Ruta: /css/style.css - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:33:27.129Z'
+}
+{
+  message: 'Ruta: /css/style.css - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:33:39.899Z'
+}
+{
+  message: 'Ruta: /css/style.css - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:36:14.355Z'
+}
+{
+  message: 'Ruta: /pistacho - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:36:48.474Z'
+}
+{
+  message: 'Ruta: /api/rando - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T00:41:09.807Z'
+}
+{
+  message: 'Ruta: /js/script.js - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:20:54.166Z'
+}
+{
+  message: 'Ruta: /asd - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:24:45.664Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:24:46.311Z'
+}
+{
+  message: 'Ruta: /asd - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:26:08.286Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:26:08.939Z'
+}
+{
+  message: 'Ruta: /54asd - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:26:55.516Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:26:56.179Z'
+}
+{
+  message: 'Ruta: /asdasd - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:27:21.408Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:27:22.039Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:27:27.244Z'
+}
+{
+  message: 'Ruta: /datos - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:28:43.200Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-14T01:28:43.551Z'
+}
