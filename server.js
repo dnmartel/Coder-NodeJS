@@ -33,6 +33,8 @@ const optsArgv = {
 // Configuración de Minimist segun documentación
 const argv = minimist(process.argv.slice(2), optsArgv);
 
+const PORT = argv.p || 8080;
+
 const app = express();
 const advancedOptions = {
     useNewUrlParser: true,
@@ -185,7 +187,7 @@ if (argv.modo === "cluster" && cluster.isPrimary) {
     // Instancio y pongo en escucha el servidor
     const server = http.createServer(app);
     initSocket(server);
-    server.listen(argv.p, () => {
+    server.listen(PORT || argv.p, () => {
         console.log(
             `Servidor http esta escuchando en el puerto ${
                 server.address().port
