@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import config from "../config.js";
+import { ObjectId } from 'mongodb'
+
+
 
 await mongoose.connect(config.mongoDB.URI);
 
@@ -38,9 +41,10 @@ class ContenedorMongoDB {
     }
 
     async DeleteProdById(id, idProd) {
+        const objectId = new ObjectId(id)  
         return await this.collection.updateOne(
-            { _id: `${id}`  },
-            { $pull: { productos: { id: `${idProd}`  } || { _id: `${idProd}` } } }
+            { _id: objectId },
+            { $pull: { productos: {  _id: `${idProd}` } } }
         );
     }
 }

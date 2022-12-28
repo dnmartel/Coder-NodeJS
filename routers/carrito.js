@@ -8,7 +8,9 @@ router.get("/carrito", async (req, res) => {
     const id = req.query.id;
     const email = req.session.email;
     const avatar = req.session.avatar;
-    res.render("carrito", { id, email, avatar });
+    const name = req.session.name;
+    const phone = req.session.phone;
+    res.render("carrito", { id, email, avatar, name, phone });
 });
 
 router.post("/api/carrito", async (req, res) => {

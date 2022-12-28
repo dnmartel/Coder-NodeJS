@@ -24,9 +24,11 @@ router.get("/", (req, res) => {
             res.render("login");
         } else {
             const { user } = req;
-            let { email, avatar } = user;
+            let { email, avatar, name, phone } = user;
             req.session.email = email;
             req.session.avatar = avatar;
+            req.session.name = name;
+            req.session.phone = phone;
             logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
             res.render("home", { email, avatar });
         }

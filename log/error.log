@@ -236,3 +236,112 @@
   level: 'error',
   timestamp: '2022-12-28T21:04:25.058Z'
 }
+{ level: 'error', timestamp: '2022-12-28T21:50:43.612Z' }
+{ level: 'error', timestamp: '2022-12-28T21:51:33.943Z' }
+{
+  errno: -4077,
+  code: 'ESOCKET',
+  syscall: 'read',
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2022-12-28T21:56:37.537Z'
+}
+{
+  status: 400,
+  code: 21604,
+  moreInfo: 'https://www.twilio.com/docs/errors/21604',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:37:56.830Z'
+}
+{
+  status: 400,
+  code: 21604,
+  moreInfo: 'https://www.twilio.com/docs/errors/21604',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:38:46.827Z'
+}
+{
+  status: 400,
+  code: 21604,
+  moreInfo: 'https://www.twilio.com/docs/errors/21604',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:39:00.702Z'
+}
+{
+  status: 400,
+  code: 21604,
+  moreInfo: 'https://www.twilio.com/docs/errors/21604',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:40:13.291Z'
+}
+{
+  message: 'Error: phone is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T22:40:16.750Z'
+}
+{
+  message: 'Error: phone is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T22:40:27.928Z'
+}
+{
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:40:53.007Z'
+}
+{ level: 'error', timestamp: '2022-12-28T22:52:27.052Z' }
+{
+  status: 400,
+  code: 21211,
+  moreInfo: 'https://www.twilio.com/docs/errors/21211',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:52:55.593Z'
+}
+{
+  status: 400,
+  code: 21606,
+  moreInfo: 'https://www.twilio.com/docs/errors/21606',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T22:55:06.875Z'
+}
+{
+  status: 400,
+  code: 21608,
+  moreInfo: 'https://www.twilio.com/docs/errors/21608',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T23:02:07.045Z'
+}
+{
+  status: 400,
+  code: 21608,
+  moreInfo: 'https://www.twilio.com/docs/errors/21608',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T23:18:33.269Z'
+}
+{
+  status: 400,
+  code: 21608,
+  moreInfo: 'https://www.twilio.com/docs/errors/21608',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T23:19:39.974Z'
+}
+{
+  status: 400,
+  code: 21608,
+  moreInfo: 'https://www.twilio.com/docs/errors/21608',
+  details: undefined,
+  level: 'error',
+  timestamp: '2022-12-28T23:21:19.491Z'
+}
