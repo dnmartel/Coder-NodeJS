@@ -24,7 +24,7 @@
             >Desloguear</button>
         </form>
         <img
-            src="./avatars/{{{avatar}}}"
+            src="http://localhost:8080/avatars/{{{avatar}}}"
             width="50px"
             height="50px"
             style="border-radius: 40px; margin: 0; padding: 0"
@@ -34,20 +34,17 @@
 </div>
 
 <main class="container">
-    <section class="profile">
-        <div>
-            <strong>Nombre:</strong><p>{{{name}}}</p>
-            <strong>Email:</strong><p>{{{email}}}</p>
-            <strong>Dirección:</strong><p>{{{address}}}</p>
-            <strong>Edad:</strong><p>{{{age}}} años</p>
-            <strong>Teléfono:</strong><p>{{{phone}}}</p>
-
-        </div>
-
-        <div>
-            <strong>Avatar:</strong><img src="./avatars/{{{avatar}}}"></img>
-        </div>
+    <h1>Carrito</h1>
+    <section class="carritoGrid" id="productosCarrito">
 
     </section>
-    <a href="/"><button>Volver al inicio</button></a>
+
 </main>
+
+<script src="./js/carrito.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>

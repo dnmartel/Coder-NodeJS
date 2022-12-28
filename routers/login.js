@@ -5,7 +5,6 @@ import { logger } from "../log/logger.js";
 import multer from "multer";
 import path from "path";
 
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "public/avatars");
@@ -26,6 +25,8 @@ router.get("/", (req, res) => {
         } else {
             const { user } = req;
             let { email, avatar } = user;
+            req.session.email = email;
+            req.session.avatar = avatar;
             logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
             res.render("home", { email, avatar });
         }

@@ -5,7 +5,6 @@ import MongoStore from "connect-mongo";
 import path from "path";
 import http from "http";
 import handlebars from "express-handlebars";
-import initSocket from "./socket.js";
 import routers from "./routers/index.js";
 import { fileURLToPath } from "url";
 import * as dotenv from "dotenv";
@@ -209,7 +208,6 @@ if (argv.modo === "cluster" && cluster.isPrimary) {
     // FORK
     // Instancio y pongo en escucha el servidor
     const server = http.createServer(app);
-    initSocket(server);
     server.listen(PORT || argv.p, () => {
         logger.info(
             `Servidor http esta escuchando en el puerto ${

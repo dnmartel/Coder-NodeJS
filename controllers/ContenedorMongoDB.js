@@ -39,8 +39,8 @@ class ContenedorMongoDB {
 
     async DeleteProdById(id, idProd) {
         return await this.collection.updateOne(
-            { _id: id },
-            { $pull: { productos: { id: idProd } || { _id: idProd } } }
+            { _id: `${id}`  },
+            { $pull: { productos: { id: `${idProd}`  } || { _id: `${idProd}` } } }
         );
     }
 }

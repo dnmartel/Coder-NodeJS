@@ -4,7 +4,7 @@
     <nav class="navbar">
         <ul>
             <li><a href="./">Productos</a></li>
-            <li><a href="./">Carrito</a></li>
+            <li><a href="./carrito?id=63ab4fa7a6c3fce7ace0ec31">Carrito</a></li>
             <li><a href="./perfil?email={{{email}}}">Perfil</a></li>
         </ul>
     </nav>
@@ -32,33 +32,17 @@
     </div>
 
 </div>
+
 <main class="container">
-
-    <section>
-        <h3>Productos</h3>
-        <table id="tabla-productos">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Foto</th>
-                </tr>
-            </thead>
-            <tbody id="tbody-productos">
-                <!-- id="tbody-productos" -->
-
-            </tbody>
-
-        </table>
-    </section>
+    <h1>Productos</h1>
+    <section id="productos"></section>
 
 </main>
 
+<script src="./js/productos.js"></script>
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
     integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
 ></script>
-<script src="/socket.io/socket.io.min.js"></script>
-<script src="./js/script.js"></script>

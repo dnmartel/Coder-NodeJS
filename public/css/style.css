@@ -83,6 +83,42 @@
     display: block;
 }
 
-.profile img{
+.profile img {
     max-width: 400px;
+}
+
+.carritoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.cards1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.cards2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.cards3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+.cards4 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.cards5 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+.cards6 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+.cards7 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.cards8 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+.cards9 {
+    grid-area: 3 / 3 / 4 / 4;
 }

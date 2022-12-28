@@ -7,31 +7,25 @@ const { Router } = express;
 const router = Router();
 dotenv.config();
 
-router.get("/productos", async (req, res) => {
+router.get("/api/productos", async (req, res) => {
     res.status(200).json(await productos.GetAll());
 });
 
-router.get("/productos/:id", async (req, res) => {
+router.get("/api/productos/:id", async (req, res) => {
     try {
         logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
-        if (req.session.logged) {
-            const email = req.session.email;
-            console.log(email);
-            const productoID = await productos.GetByID(req.params.id);
-            if (productoID === undefined) {
-                res.status(404).json({ error: "Producto no encontrado" });
-            } else {
-                res.status(200).json(productoID);
-            }
+        const productoID = await productos.GetByID(req.params.id);
+        if (productoID === undefined) {
+            res.status(404).json({ error: "Producto no encontrado" });
         } else {
-            res.redirect("./");
+            res.status(200).json(productoID[0]);
         }
     } catch (error) {
         logger.error(`Error: ${error.message}`);
     }
 });
 
-router.post("/productos", async (req, res) => {
+router.post("/api/productos", async (req, res) => {
     if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 
@@ -46,7 +40,7 @@ router.post("/productos", async (req, res) => {
     }
 });
 
-router.put("/productos/:id", async (req, res) => {
+router.put("/api/productos/:id", async (req, res) => {
     if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 
@@ -67,7 +61,7 @@ router.put("/productos/:id", async (req, res) => {
     }
 });
 
-router.delete("/productos/:id", async (req, res) => {
+router.delete("/api/productos/:id", async (req, res) => {
     if (process.env.ADMIN) {
         console.log("isAdmin: true - method allowed");
 

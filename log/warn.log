@@ -213,3 +213,1443 @@
   level: 'warn',
   timestamp: '2022-12-28T14:54:21.934Z'
 }
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:19:29.702Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:19:57.773Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:19:59.454Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:20:01.298Z'
+}
+{
+  message: 'Ruta: /socket.io/socket.io.min.js - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:37:15.865Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:37:17.126Z'
+}
+{
+  message: 'Ruta: /socket.io/socket.io.min.js - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:37:20.695Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:37:21.119Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:38:17.734Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:38:18.919Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T15:38:49.678Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:04:53.083Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:04:58.964Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:10:34.610Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:11:03.810Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:12:37.757Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:13:03.848Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:14:09.646Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:14:21.400Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:14:23.598Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:14:27.074Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:14:43.231Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:16:26.332Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:21:01.468Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:21:12.527Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:21:54.132Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:23:30.544Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:23:34.092Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:23:39.982Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:24:26.209Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:24:57.899Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:25:01.489Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:25:02.803Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:25:03.996Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:25:04.567Z'
+}
+{
+  message: 'Ruta: /carrito - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:46.227Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:47.488Z'
+}
+{
+  message: 'Ruta: /carrito?id=63ab4fa7a6c3fce7ace0ec31 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:49.185Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:49.782Z'
+}
+{
+  message: 'Ruta: /carrito?id=63ab4fa7a6c3fce7ace0ec31 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:51.920Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:31:52.499Z'
+}
+{
+  message: 'Ruta: /carrito?id=63ab4fa7a6c3fce7ace0ec31 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:00.825Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:01.392Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:07.041Z'
+}
+{
+  message: 'Ruta: /carrito?id=63ab4fa7a6c3fce7ace0ec31 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:10.407Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:10.973Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:36.422Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:39.230Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:32:39.537Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:08.809Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:09.093Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:10.429Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:10.726Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:12.989Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:14.238Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:14.763Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:34.129Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:35.646Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:38.805Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:39.090Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:42.088Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:46.048Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:47.364Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:33:47.651Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:34:02.532Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:34:03.943Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:34:11.546Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:34:11.832Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:44:20.238Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:44:54.941Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:46:34.064Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:46:56.566Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:46:56.802Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:46:57.857Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:46:58.078Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:49:08.503Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:49:08.732Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:49:46.979Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:49:47.177Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:35.021Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:35.286Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:53.764Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:57.273Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:58.044Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:56:58.562Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T16:58:29.407Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:03:58.682Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:00.708Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:14.283Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:14.595Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:19.290Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:19.819Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:28.000Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:28.253Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:37.773Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:38.069Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:41.405Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:04:41.671Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:02.225Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:02.501Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:39.248Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:39.525Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:52.243Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:05:52.531Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:25.016Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:25.330Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:28.018Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:28.310Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:34.563Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:41.341Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:06:41.994Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:10:26.704Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:10:26.939Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:10:38.122Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:10:38.367Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:12:01.959Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:12:02.212Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:12:13.190Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:12:13.637Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:21.749Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:21.971Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:24.040Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:28.008Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:29.901Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:32.097Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:32.386Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:59.361Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:13:59.627Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:14:20.222Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:14:21.630Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:14:53.177Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:14:53.468Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:16:14.663Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:16:15.035Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:16:27.106Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:16:27.379Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:17:08.227Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:17:08.508Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:17:57.174Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:17:57.466Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:18:20.201Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:18:20.537Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:30:48.323Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:30:48.582Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:30:57.558Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:30:57.765Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:34:15.171Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:34:15.423Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:34:22.232Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:34:22.470Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:01.096Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:01.368Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:14.937Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:15.188Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:22.289Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:25.927Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:28.525Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:30.887Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:32.813Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:33.448Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:33.746Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:43.197Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:35:43.548Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:36:18.693Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:36:18.995Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:36:28.713Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:36:29.054Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:10.148Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:10.445Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:13.929Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:14.237Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:21.788Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T17:37:22.316Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T19:59:04.307Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T19:59:08.417Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T19:59:16.391Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T19:59:16.662Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T19:59:19.970Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:00:06.053Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:00:08.237Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:00:14.034Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:00:20.693Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:00:21.254Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:03.175Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:05.388Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:09.862Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:10.678Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:11.206Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:39.059Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:40.865Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:54.830Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:01:55.127Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:02:23.472Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:02:23.761Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:02:39.491Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:03:20.587Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:03:22.194Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:03:25.991Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:03:28.193Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:04:53.848Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:05:00.901Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:05:05.502Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:07:11.771Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:07:22.897Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:11.185Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:14.862Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:17.061Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:20.869Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:37.550Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:11:43.683Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:12:07.581Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:13:06.813Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:13:09.922Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:13:11.061Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:13:15.716Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:13:19.476Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:14:35.700Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:15:14.095Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:15:46.191Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:16:03.552Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:16:17.907Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:18:34.638Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:18:40.984Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:18:43.406Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:18:44.538Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:19:07.228Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:19:45.830Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:21:12.245Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:21:14.611Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:00.224Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:02.318Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:04.310Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:04.548Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:07.256Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:22:07.788Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:24:39.416Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:24:39.680Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:24:44.442Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:24:44.688Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:25:45.535Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:25:45.763Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:35.255Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:35.499Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:36.534Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:36.765Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:38.988Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:26:39.215Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:27:43.333Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:27:43.562Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:27:44.885Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:27:45.375Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:27:46.522Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:28:07.418Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:28:09.262Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:28:12.641Z'
+}
+{
+  message: 'Ruta: /api/carritos - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:28:24.793Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:29:56.181Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:29:57.001Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:29:58.310Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:30:01.063Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:30:01.941Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:30:04.295Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:32:05.216Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:32:09.268Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:33:10.980Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:33:14.319Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:33:50.267Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:33:53.389Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:34:03.602Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:34:06.977Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:34:43.604Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:34:49.271Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:34:57.315Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:35:01.167Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:35:22.789Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:37:05.936Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T20:37:11.808Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:00:07.496Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:00:09.705Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:00:12.602Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:00:15.830Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:00:16.683Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:01:21.013Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:01:29.964Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:02:23.360Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:02:25.429Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:02:55.226Z'
+}
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T21:05:19.263Z'
+}
