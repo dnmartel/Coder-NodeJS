@@ -2,7 +2,20 @@
 import { Router } from "express";
 import passport from "passport";
 import { logger } from "../log/logger.js";
+import multer from "multer";
+import path from "path";
 
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "public/avatars");
+    },
+    filename: function (req, file, cb) {
+        cb(null, req.body.email + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -12,9 +25,9 @@ router.get("/", (req, res) => {
             res.render("login");
         } else {
             const { user } = req;
-            let email = user.email;
+            let { email, avatar } = user;
             logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
-            res.render("productos", { email });
+            res.render("home", { email, avatar });
         }
     } catch (error) {
         logger.error(`Error: ${error.message}`);
@@ -82,15 +95,21 @@ router.get("/failureRegister", (req, res) => {
 
 router.post(
     "/register",
+    upload.single("avatar"),
+    (req, res, next) => {
+        req.body.avatar = req.file.filename;
+        next();
+    },
     passport.authenticate("sign-up", {
         successRedirect: "/",
         failureRedirect: "/failureRegister"
     }),
-    (req, res) => {
+    async (req, res) => {
         try {
             logger.info(`Ruta: ${req.originalUrl} - Metodo: ${req.method}`);
             const { user } = req;
-            console.log("register -> user", user);
+
+            logger.info("register -> user", user);
         } catch (error) {
             logger.error(`Error: ${error.message}`);
         }

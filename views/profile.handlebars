@@ -1,0 +1,53 @@
+<div class="menu">
+    <p id="bienvenido">Bienvenido<strong>{{{email}}}</strong></p>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="./">Productos</a></li>
+            <li><a href="./">Carrito</a></li>
+            <li><a href="./perfil?email={{{email}}}">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <div style="display: flex">
+        <form
+            id="submit"
+            action="/logout"
+            method="POST"
+            style="margin: 0 1em; padding: 0"
+        >
+            <input type="hidden" name="email" value="{{email}}" />
+            <button
+                role="button"
+                type="submit"
+                id="submit-username"
+            >Desloguear</button>
+        </form>
+        <img
+            src="./avatars/{{{avatar}}}"
+            width="50px"
+            height="50px"
+            style="border-radius: 40px; margin: 0; padding: 0"
+        />
+    </div>
+
+</div>
+
+<main class="container">
+    <section class="profile">
+        <div>
+            <strong>Nombre:</strong><p>{{{name}}}</p>
+            <strong>Email:</strong><p>{{{email}}}</p>
+            <strong>Dirección:</strong><p>{{{address}}}</p>
+            <strong>Edad:</strong><p>{{{age}}} años</p>
+            <strong>Teléfono:</strong><p>{{{phone}}}</p>
+
+        </div>
+
+        <div>
+            <strong>Avatar:</strong><img src="./avatars/{{{avatar}}}"></img>
+        </div>
+
+    </section>
+    <a href="/"><button>Volver al inicio</button></a>
+</main>

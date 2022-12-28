@@ -1,4 +1,3 @@
-import { Schema } from "mongoose";
 import productosModel from "../../models/productosModel.js";
 import ContenedorMongoDB from "../../controllers/ContenedorMongoDB.js";
 

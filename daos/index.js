@@ -3,6 +3,7 @@ dotenv.config();
 let productosDao;
 let mensajesDao;
 let usuariosDao;
+let carritosDao;
 console.log("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
 switch (process.env.TIPO_PERSISTENCIA) {
     case "mongo":
@@ -15,7 +16,11 @@ switch (process.env.TIPO_PERSISTENCIA) {
         const { default: UsuariosDaoMongoDB } = await import(
             "./usuarios/UsuariosDaoMongoDB.js"
         );
+        const { default: CarritosDaoMongoDB } = await import(
+            "./carritos/CarritosDaoMongoDB.js"
+        );
 
+        carritosDao = new CarritosDaoMongoDB();
         productosDao = new ProductosDaoMongoDB();
         mensajesDao = new MensajesDaoMongoDB();
         usuariosDao = new UsuariosDaoMongoDB();
@@ -34,4 +39,4 @@ switch (process.env.TIPO_PERSISTENCIA) {
         break;
 }
 
-export { productosDao, mensajesDao, usuariosDao };
+export { productosDao, mensajesDao, usuariosDao, carritosDao };

@@ -18,6 +18,17 @@ import minimist from "minimist";
 import cluster from "cluster";
 import os from "os";
 import compression from "compression";
+import { logger } from "./log/logger.js";
+import { createTransport } from "nodemailer";
+
+const transporter = createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    auth: {
+        user: "kayden.kirlin64@ethereal.email",
+        pass: "k9g2VvAqKBXHMdPTPA"
+    }
+});
 
 const optsArgv = {
     default: {
@@ -55,22 +66,20 @@ passport.use(
         (email, password, done) => {
             usersModel
                 .findOne({ email })
-                .then((user) => {
+                .then(async (user) => {
                     if (!user) {
-                        console.log(`Usuario ${email} no encontrado.`);
-
+                        logger.info(`Usuario ${email} no encontrado.`);
                         return done(null, false);
                     }
 
                     if (!bcrypt.compareSync(password, user.password)) {
-                        console.log("Contraseña inválida");
-
+                        logger.info("Contraseña inválida");
                         return done(null, false);
                     }
                     done(null, user);
                 })
                 .catch((error) => {
-                    console.log("Error en el login", error.message);
+                    logger.info("Error en el login", error.message);
 
                     done(error, false);
                 });
@@ -89,7 +98,7 @@ passport.use(
                 .findOne({ email })
                 .then((user) => {
                     if (user) {
-                        console.log(`El usuario ${email} ya existe.`);
+                        logger.info(`El usuario ${email} ya existe.`);
                         return done(null, false);
                     } else {
                         const salt = bcrypt.genSaltSync(10);
@@ -99,18 +108,32 @@ passport.use(
                         return usersModel.create(req.body);
                     }
                 })
-                .then((newUser) => {
-                    console.log(newUser);
+                .then(async (newUser) => {
+                    logger.info(newUser);
                     if (newUser) {
-                        console.log(`Registro completo: ${newUser.email}.`);
+                        try {
+                            const sendRegister = await transporter.sendMail({
+                                from: "Backend Node Server",
+                                to: process.env.TEST_MAIL,
+                                subject: "Nuevo registro",
+                                text: `${newUser}`
+                            });
+                            logger.info(
+                                "Nuevo registro ",
+                                JSON.parse(sendRegister)
+                            );
+                        } catch (error) {
+                            logger.error(error);
+                        }
+                        logger.info(`Registro completo: ${newUser.email}.`);
 
                         done(null, newUser);
                     } else {
-                        throw new Error("User already exists");
+                        logger.error("El usuario ya existe");
                     }
                 })
                 .catch((error) => {
-                    console.log("Error en el registro", error.message);
+                    logger.info("Error en el registro", error.message);
                     return done(error);
                 });
         }
@@ -127,7 +150,7 @@ passport.deserializeUser((_id, done) => {
             done(null, user);
         })
         .catch((error) => {
-            console.log("Error en la deserialización:", error.message);
+            logger.info("Error en la deserialización:", error.message);
             done(error);
         });
 });
@@ -171,15 +194,15 @@ app.set("views", path.join(__dirname, "views"));
 if (argv.modo === "cluster" && cluster.isPrimary) {
     const numCPU = os.cpus().length;
 
-    console.log(`Proceso principal: ${process.pid}`, "---  Cores", numCPU);
+    logger.info(`Proceso principal: ${process.pid}`, "---  Cores", numCPU);
     for (let i = 0; i < numCPU; i++) {
         cluster.fork();
     }
     cluster.on("exit", (worker, code, signal) => {
-        console.log(
+        logger.info(
             `Worker killed ${worker.process.pid} | code: ${code} | signal: ${signal} `
         );
-        console.log("Configurando nuevo Worker 👌");
+        logger.info("Configurando nuevo Worker 👌");
         cluster.fork();
     });
 } else {
@@ -188,12 +211,12 @@ if (argv.modo === "cluster" && cluster.isPrimary) {
     const server = http.createServer(app);
     initSocket(server);
     server.listen(PORT || argv.p, () => {
-        console.log(
+        logger.info(
             `Servidor http esta escuchando en el puerto ${
                 server.address().port
             }`
         );
-        console.log(
+        logger.info(
             `Servidor corriendo en http://localhost:${
                 server.address().port
             } PID: ${process.pid} - MODO: ${argv.modo}`
@@ -201,5 +224,5 @@ if (argv.modo === "cluster" && cluster.isPrimary) {
     });
 
     // Manejo de errores
-    server.on("error", (error) => console.log(`Error en servidor ${error}`));
+    server.on("error", (error) => logger.error(`Error en servidor ${error}`));
 }

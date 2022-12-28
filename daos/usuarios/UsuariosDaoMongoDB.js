@@ -5,6 +5,10 @@ class UsuariosDaoMongoDB extends ContenedorMongoDB {
     constructor() {
         super(usersModel);
     }
+
+    async GetByEmail(email) {
+        return await this.collection.find({ email: `${email}` });
+    }
 }
 
 export default UsuariosDaoMongoDB;

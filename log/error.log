@@ -1,0 +1,73 @@
+{
+  message: 'Error: user is not defined',
+  level: 'error',
+  timestamp: '2022-12-27T22:12:53.486Z'
+}
+{
+  message: 'Error: user is not defined',
+  level: 'error',
+  timestamp: '2022-12-27T22:14:03.964Z'
+}
+{
+  message: 'Error: user is not defined',
+  level: 'error',
+  timestamp: '2022-12-27T22:15:02.886Z'
+}
+{
+  message: 'Error: user is not defined',
+  level: 'error',
+  timestamp: '2022-12-27T22:15:50.678Z'
+}
+{
+  message: 'Error: avatar is not defined',
+  level: 'error',
+  timestamp: '2022-12-27T22:25:01.973Z'
+}
+{ level: 'error', timestamp: '2022-12-27T22:58:53.806Z' }
+{
+  code: 'EAUTH',
+  command: 'API',
+  level: 'error',
+  timestamp: '2022-12-27T23:00:51.295Z'
+}
+{
+  code: 'EAUTH',
+  command: 'API',
+  level: 'error',
+  timestamp: '2022-12-27T23:01:26.825Z'
+}
+{
+  message: "Error: Cannot destructure property 'email' of 'user' as it is undefined.",
+  level: 'error',
+  timestamp: '2022-12-28T14:26:46.930Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:27:13.224Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:27:15.866Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:27:22.049Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:27:48.838Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:28:26.772Z'
+}
+{
+  message: 'Error: email is not defined',
+  level: 'error',
+  timestamp: '2022-12-28T14:28:31.764Z'
+}

@@ -9,6 +9,26 @@ const usersModel = new Schema(
             unique: true,
             index: true,
             validate: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
+        },
+        name: {
+            type: String,
+            require: true
+        },
+        address: {
+            type: String,
+            require: true
+        },
+        age: {
+            type: Number,
+            require: true
+        },
+        phone: {
+            type: Number,
+            require: true
+        },
+        avatar: {
+            type: String,
+            require: true
         }
     },
     { timestamps: true }

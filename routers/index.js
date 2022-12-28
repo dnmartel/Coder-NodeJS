@@ -1,20 +1,18 @@
 import { Router } from "express";
 import loginRouter from "./login.js";
 import productosRouter from "./productos.js";
-import fakerRouter from "./faker.js";
-import infoRouter from "./info.js";
-import randomsRouter from "./randoms.js";
+import carritoRouter from "./carrito.js";
 import invalidRouter from "./invalid.js";
+import perfilRouter from "./perfil.js"
 
 const router = Router();
 
 router.use(
     "/",
     loginRouter,
+    perfilRouter,
     productosRouter,
-    fakerRouter,
-    infoRouter,
-    randomsRouter,
+    carritoRouter,
     invalidRouter
 );
 

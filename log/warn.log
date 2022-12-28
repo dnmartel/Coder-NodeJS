@@ -73,3 +73,143 @@
   level: 'warn',
   timestamp: '2022-12-14T01:27:21.408Z'
 }
+{
+  message: 'Ruta: /favicon.ico - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:48:47.729Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:54:34.874Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:55:25.572Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:55:42.295Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:55:50.048Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:56:07.143Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:57:06.091Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:57:24.731Z'
+}
+{
+  message: 'Ruta: /%60$%7Bwindow.location.href%7Dpublic/avatars/dmartel@jcc.com.ar%60 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:59:26.224Z'
+}
+{
+  message: 'Ruta: /%60http://localhost:8080/public/avatars/dmartel@jcc.com.ar%60 - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T21:59:41.761Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T22:00:02.284Z'
+}
+{
+  message: 'Ruta: /public/avatars/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T22:00:35.269Z'
+}
+{
+  message: 'Ruta: /avatars/dmartel@jcc.com.ar - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T22:01:44.975Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T22:24:15.263Z'
+}
+{
+  message: 'Ruta: /avatars/ - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-27T22:25:28.671Z'
+}
+{
+  message: 'Ruta: /avatar/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:42:35.126Z'
+}
+{
+  message: 'Ruta: /avatar/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:43:03.951Z'
+}
+{
+  message: 'Ruta: /avatar/dmartel@jcc.com.ar.jpg - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:43:06.648Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:35.129Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:36.543Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:40.264Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:41.438Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:43.685Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:46:45.214Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:47:15.321Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:54:06.805Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:54:20.430Z'
+}
+{
+  message: 'Ruta: /login - Metodo: GET - Ruta inexistente.',
+  level: 'warn',
+  timestamp: '2022-12-28T14:54:21.934Z'
+}

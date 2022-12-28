@@ -43,11 +43,46 @@
 }
 .login * {
     padding: 0;
-    margin: .75em 1em;
+    margin: 0.75em 1em;
 }
 
 .login #submit-username {
     height: fit-content;
     margin: 10px;
-    font-size: .8em;
+    font-size: 0.8em;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 5px;
+}
+.menu * {
+    padding: 0;
+    margin: 0.75em 1em;
+}
+
+.navbar * {
+    margin: 0 0.5em;
+    padding: 0;
+}
+
+.menu #submit-username {
+    height: fit-content;
+    margin: 10px;
+    font-size: 0.8em;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile strong {
+    display: block;
+}
+
+.profile img{
+    max-width: 400px;
 }
