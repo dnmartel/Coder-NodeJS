@@ -56,7 +56,7 @@ async function iniciarPedido(nombre, email, phone) {
         body: JSON.stringify(body)
     };
     await fetch("./notificar", options).then(() => {
-        console.log("Pedido realizado");
+        alert("Pedido realizado");
     });
 }
 

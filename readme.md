@@ -28,72 +28,42 @@ node .\server.js -p XXXX (-p PORT, por defecto 8080)
 <http://localhost:8080/info> NO requiere estar logueado
 <http://localhost:8080/api/randoms?cant=50000> (posibilidad de usar query param "cant", por defecto 100000000)
 
-## Consignas y comandos
+### Consignas y comandos
 
-#### Incorporar al proyecto de servidor de trabajo la compresión gzip. Verificar sobre la ruta /info con y sin compresión, la diferencia de cantidad de bytes devueltos en un caso y otro
+#### Un menú de registro y autenticación de usuarios basado en passport local, guardando en la base de datos las credenciales y el resto de los datos ingresados al momento del registro. El registro de usuario consiste en crear una cuenta en el servidor almacenada en la base de datos, que contenga el email y password de usuario, además de su nombre, dirección, edad, número de teléfono (debe contener todos los prefijos internacionales) y foto ó avatar. La contraseña se almacenará encriptada en la base de datos. La imagen se podrá subir al servidor y se guardará en una carpeta pública del mismo a la cual se tenga acceso por url
 
 ```sh
-Se aplica compression a nivel servidor - Se compara en ruta /info --> pasa de 1.5kb a 922 bytes
+Se realiza el menu de registro (login + sign up) con los campos mencionados. Se utiliza MongoDB como base de datos, ajustando los modelos del Schema para que cumplan con los requisitos pedidos. 
+Para subir la imagen, se utiliza multer, siendo la ruta /public/avatars la ubicacion de los archivos. Se configura para mantener la extension de los archivos y se almacena este String como campo dentro del perfil de la persona.
 ```
 
-#### Luego implementar loggueo (con alguna librería vista en clase) que registre lo siguiente: -Ruta y método de todas las peticiones recibidas por el servidor (info) -Ruta y método de las peticiones a rutas inexistentes en el servidor (warning) -Errores lanzados por las apis de mensajes y productos, únicamente (error).
-Considerar el siguiente criterio: -Loggear todos los niveles a consola (info, warning y error) -Registrar sólo los logs de warning a un archivo llamada warn.log -Enviar sólo los logs de error a un archivo llamada error.log
+#### Un formulario post de registro y uno de login. De modo que, luego de concretarse cualquiera de estas operaciones en forma exitosa, el usuario accederá a su home. El usuario se logueará al sistema con email y password y tendrá acceso a un menú en su vista, a modo de barra de navegación. Esto le permitirá ver los productos totales con los filtros que se hayan implementado y su propio carrito de compras e información propia (datos de registro con la foto). Además, dispondrá de una opción para desloguearse del sistema.  Ante la incorporación de un usuario, el servidor enviará un email al administrador con todos los datos de registro y asunto 'nuevo registro', a una dirección que se encuentre por el momento almacenada en una constante global
 
 ```sh
-Se incorpora una ruta para que matchee aquellas rutas invalidas o no definidas anteriormente.
-Se aplica la configuración solicitada a través del archivo alojado en ./log/logger.js
-Además, en la misma carpeta se deja registro de los errores y warnings en los archivos solicitados.
+Los formularios se incorporaron en las vistas correspondientes. En la vista home, por defecto se muestran los productos teniendo la barra de navegacion disponible para moverse entre menues (Productos, Carrito, Perfil). En ese mismo menu, se muestra ademas el mensaje de bienvenida personalizado y el boton de desloguearse + el avatar.
+Dentro del passport signup, se incluye el envio de correo de registro al administrador.
 ```
 
-#### Luego, realizar el análisis completo de performance del servidor con el que venimos trabajando. Vamos a trabajar sobre la ruta '/info', en modo fork, agregando ó extrayendo un console.log de la información colectada antes de devolverla al cliente. Para ambas condiciones (con o sin console.log) en la ruta '/info'
-1) El perfilamiento del servidor, realizando el test con --prof de node.js. Analizar los resultados obtenidos luego de procesarlos con --prof-process. Utilizaremos como test de carga Artillery en línea de comandos, emulando 50 conexiones concurrentes con 20 request por cada una. Extraer un reporte con los resultados en archivo de texto
+#### Envío de un email y un mensaje de whatsapp al administrador desde el servidor, a un número de contacto almacenado en una constante global. - El usuario iniciará la acción de pedido en la vista del carrito. -Será enviado una vez finalizada la elección para la realizar la compra de productos. -El email contendrá en su cuerpo la lista completa de productos a comprar y en el asunto la frase 'nuevo pedido de ' y el nombre y email del usuario que los solicitó. En el mensaje de whatsapp se debe enviar la misma información del asunto del email. -El usuario recibirá un mensaje de texto al número que haya registrado, indicando que su pedido ha sido recibido y se encuentra en proceso
 
 ```sh
-Resultados dentro de la carpeta /profilling/1
-Al ver ambos archivos (result_conlog.txt vs result_sinlog.txt) podemos observar en el apartado de Summary, la diferencia de 
-ticks que ocupa la ejecución sin tener el console.log (result_sinlog.txt) es mucho menor (8398) a comparación de la ejecución
-que si lo contiene (17228). 
+Se setea Twilio y Nodemailer para permitir el envio de las notificaciones. Esto se hace a travès de una ruta especifica /notificar, accionada desde el front al momento de emular la compra.
 ```
 
-#### Luego utilizaremos Autocannon en línea de comandos, emulando 100 conexiones concurrentes realizadas en un tiempo de 20 segundos. Extraer un reporte con los resultados (puede ser un print screen de la consola)
+#### El servidor trabajará con una base de datos DBaaS (Ej. MongoDB Atlas) y estará preparado para trabajar en forma local o en la nube a través de la plataforma PaaS Heroku
 
-![Autocannon](./profilling/autocannon/autocannon.png)
 ```sh
-Imagen adjunta en /profilling/autocannon/autocannon.png
-Se pueden observar los siguientes valores corriendo un test de 20 segundos, con 100 conexiones.
-┌─────────┬────────┬────────┬─────────┬─────────┬───────────┬───────────┬─────────┐
-│ Stat    │ 2.5%   │ 50%    │ 97.5%   │ 99%     │ Avg       │ Stdev     │ Max     │
-├─────────┼────────┼────────┼─────────┼─────────┼───────────┼───────────┼─────────┤
-│ Latency │ 144 ms │ 969 ms │ 1482 ms │ 1938 ms │ 913.87 ms │ 287.98 ms │ 2022 ms │
-└─────────┴────────┴────────┴─────────┴─────────┴───────────┴───────────┴─────────┘
-┌───────────┬─────────┬─────────┬────────┬────────┬────────┬─────────┬─────────┐
-│ Stat      │ 1%      │ 2.5%    │ 50%    │ 97.5%  │ Avg    │ Stdev   │ Min     │
-├───────────┼─────────┼─────────┼────────┼────────┼────────┼─────────┼─────────┤
-│ Req/Sec   │ 26      │ 26      │ 111    │ 121    │ 106.15 │ 19.5    │ 26      │
-├───────────┼─────────┼─────────┼────────┼────────┼────────┼─────────┼─────────┤
-│ Bytes/Sec │ 43.1 kB │ 43.1 kB │ 184 kB │ 201 kB │ 176 kB │ 32.3 kB │ 43.1 kB │
-└───────────┴─────────┴─────────┴────────┴────────┴────────┴─────────┴─────────
+Como se mencionó anteriormente, se utilizó MongoDB como DBaaS. Además, se sube la instancia a Railways.
 ```
 
-#### 2) El perfilamiento del servidor con el modo inspector de node.js --inspect. Revisar el tiempo de los procesos menos performantes sobre el archivo fuente de inspección
+#### Habilitar el modo cluster para el servidor, como opcional a través de una constante global
 
 ```sh
-No se encuentran funciones poco performantes listadas en el archivo server.js dentro del node inspect.
+Se agrega el parametro "-m cluster" para indicar que se trabajara en modo cluster.
 ```
 
-#### 3) El diagrama de flama con 0x, emulando la carga con Autocannon con los mismos parámetros anteriores. Realizar un informe en formato pdf sobre las pruebas realizadas incluyendo los resultados de todos los test (texto e imágenes)
+#### Utilizar alguno de los loggers ya vistos y así reemplazar todos los mensajes a consola por logs eficientes hacia la misma consola. En el caso de errores moderados ó graves el log tendrá además como destino un archivo elegido
 
 ```sh
-Se adjunta en la carpeta ./profilling/0x/11328.0x/flamegraph.html , junto con el resto de los archivos generados por la herramienta. 
-En el se pueden ver procesos cortos, algunos picos pero sin mesetas, lo que nos hace pensar que los procesos se ejecutan sin 
-bloqueos y de forma eficiente.
-```
-
-#### 👉 Al final incluir la conclusión obtenida a partir del análisis de los datos
-
-```sh
-En lineas generales se puede ver en los análisis y pruebas realizadas que el servidor no posee mayores problemas de performance. 
-Esto se corrobora despues de ver los test de artillery, node --inspect y autocannon + 0x. También, hay que tener en cuenta que 
-cualquier agregado innecesario (como exceso de console.log) pueden afectar al rendimiento del servidor en producción, por lo que 
-no son para nada recomendables.
+Se configura winston como logger. Queda configurado para enviar INFO a consola, WARN y ERROR hacia archivos locales en la carpeta ./log
 ```

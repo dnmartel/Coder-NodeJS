@@ -37,25 +37,6 @@ const ControllerNormalizer = async (data) => {
 
     const result = normalize(base, mensajesFinal);
 
-/*     console.log("DATA ORIGINAL");
-    console.log(
-        "--------------------------------------------------------------"
-    );
-    console.log(JSON.stringify(base).length);
-
-    console.log("DATA NORMALIZADA");
-    console.log(
-        "--------------------------------------------------------------"
-    );
-    console.log(JSON.stringify(result).length);
-
-    const reverse = denormalize(result.result, mensajesFinal, result.entities);
-    console.log("DATA DESNORMALIZADA");
-    console.log(
-        "--------------------------------------------------------------"
-    );
-    console.log(JSON.stringify(reverse).length); */
-
     return result;
 };
 

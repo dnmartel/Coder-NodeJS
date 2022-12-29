@@ -19,7 +19,6 @@ class ContenedorMemoria {
     }
 
     Save(elem) {
-        console.log("ContenedorMemoria -> guardar Here");
         let newId;
         if (this.elementos.length == 0) {
             newId = 1;
@@ -29,7 +28,6 @@ class ContenedorMemoria {
 
         const newElem = { ...elem, id: newId };
         this.elementos.push(newElem);
-        console.log(this.elementos);
         return newElem;
     }
 
@@ -73,7 +71,7 @@ class ContenedorMemoria {
 
             return carritoID;
         } catch (error) {
-            console.log("😢 No se pudo guardar el objeto: " + error);
+            throw new Error("😢 No se pudo guardar el objeto: " + error);
         }
     }
 
@@ -92,7 +90,7 @@ class ContenedorMemoria {
                 Object.assign(this.elementos, contenido);
                 return { eliminado: idProd };
             } catch (error) {
-                console.log("😢 No se pudo leer el id: " + error);
+                throw new Error("😢 No se pudo leer el id: " + error);
             }
         } else {
             return null;

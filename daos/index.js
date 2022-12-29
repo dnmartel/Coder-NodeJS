@@ -1,10 +1,13 @@
 import * as dotenv from "dotenv";
+import { logger } from "../log/logger.js";
 dotenv.config();
+
 let productosDao;
 let mensajesDao;
 let usuariosDao;
 let carritosDao;
-console.log("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
+
+logger.info("TIPO DE PERSISTENCIA:", process.env.TIPO_PERSISTENCIA);
 switch (process.env.TIPO_PERSISTENCIA) {
     case "mongo":
         const { default: ProductosDaoMongoDB } = await import(
